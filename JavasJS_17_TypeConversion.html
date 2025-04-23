@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+
+// 1) Variables declaration: 
+
+let mass_Rahul= 78;
+console.log(`Rahul Mass: ` +mass_Rahul);
+let mass_Vishal = 92;
+console.log("Rahul Mass: " +mass_Vishal);
+const height_Rahul= 1.69;
+console.log("Vishal Height: " +height_Rahul);
+const height_Vishal= 1.95;
+console.log('Vishal Height: ' +height_Vishal);
+
+// 2) Store Bmi result using Bmi_formula: 
+
+const BMI_Rahul = mass_Rahul/height_Rahul ** 2;
+console.log("Rahul Bmi is: " +BMI_Rahul.toFixed(2));
+const BMI_Vishal = mass_Vishal/height_Vishal ** 2;
+console.log("Vishal Bmi is: " +BMI_Vishal.toFixed(2));
+
+// 3) Comparison both individuals.
+
+const rahulHigherBMI= BMI_Rahul.toFixed(2);
+
+if(rahulHigherBMI > BMI_Vishal.toFixed(2)){
+ console.log("Rahul has a higher BMI than Vishal: "  +rahulHigherBMI);
+console.log("rahulHigherBMI: " +Boolean(rahulHigherBMI));
+}
+else
+{
+    console.log(BMI_Vishal.toFixed(2));
+}
+
+// ---------------------Addition of conditional Statement Rule (IF/Else)------------------------
+
+let massRahul= 78;
+console.log(`Rahul Mass: ` +massRahul);
+let massVishal = 92;
+console.log("Rahul Mass: " +massVishal);
+const heightRahul= 1.69;
+console.log("Vishal Height: " +heightRahul);
+const heightVishal= 1.95;
+console.log('Vishal Height: ' +heightVishal);
+
+const BMIRahul = massRahul/heightRahul ** 2;
+console.log("Rahul Bmi is: " +BMIRahul.toFixed(2));
+const BMIVishal = massVishal/heightVishal ** 2;
+console.log("Vishal Bmi is: " +BMIVishal.toFixed(2));
+
+if(BMIRahul > BMIVishal)
+{
+    console.log(`Rahul BMI (${BMIRahul}) is higher than Vishal(${BMIVishal})`);
+}
+else
+{
+    console.log(`Vishal(${BMIVishal}) BMI is higher than Rahul(${BMIRahul})`)
+ }
+
+ 
+//  ----------------------------16-April----------------------
+
+// string and Template literal
+const f_name="Shelly";
+const s_name="shivani";
+let c_job="developer";
+const currentyear="2025";
+const company_name ="chipsoft";
+
+//Problem
+const Shelly= "I'm " +f_name+ ", and "  +s_name+ " " +c_job+ "is my friend and she is a " +c_job+ "";
+const n_Shelly= `I'm  ${f_name} and  ${s_name} is my friend, she is a ${c_job}.`;
+console.log(Shelly);
+console.log(n_Shelly);
+
+
+const group= Number(prompt("Enter your age")); // comes in string which means white color so convert in number.
+console.log(group);
+
+let n_group;
+if (group>=12)
+{
+    console.log(`greater than ${group}`);
+     n_group=group+1;
+     console.log(n_group)
+}
+else
+{
+    console.log(`less than ${group}`);
+    n_group = group - 1;
+    console.log(n_group);
+}
+
+
+
+//  ----------------------------17-April----------------------
+
+// type conversion
+ const inputyear ="1991";
+console.log(inputyear, typeof inputyear);
+console.log(inputyear +15);
+//console.log(number(inputyear) + 18);
+// console.log(number("Rahul"));
+console.log(typeof NaN);
+
+
+// white color- "String"
+// blue color - number
+console.log ("I'am " + 23 + "years old");
+console.log("23" - "10" - 3);
+console.log("23"/"2");
+
+// 5 True and false values
+console.log(Boolean(0));
+console.log(Boolean(undefined));
+console.log(Boolean(""));
+console.log(Boolean("Mohit"));
+console.log(Boolean({}));
+
+
+
+   </script> 
+</body>
+</html>
