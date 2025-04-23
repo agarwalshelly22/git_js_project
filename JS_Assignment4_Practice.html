@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+
+// 4 *********************************************************************************************
+
+  let bill_Value = 316.25;
+  let bill_Value2 = 275;
+  let bill_Value3 = 40;
+  let bill_Value4 = 430;
+  let tip;
+  let tip2;
+  let tip3;
+  let tip4;
+  let totalAmount;
+  let totalAmount2;
+  let totalAmount3;
+  let totalAmount4;
+
+
+  switch(bill_Value)
+  {
+  case 316.25:
+  if (bill_Value >= 50 && bill_Value <= 300) {
+     tip = bill_Value * .15;
+  } else {
+    tip = bill_Value * .20;
+  } 
+  totalAmount = bill_Value + tip;
+  console.log(`Total 1: ${totalAmount}`);
+  console.log(`Bill 1: ${bill_Value}`);
+  console.log(`Tip 1: ${tip}`);
+
+
+  case 275:
+  if (bill_Value2 >= 50 && bill_Value2 <= 300) {
+    tip2 = bill_Value2 * .15;
+  } else {
+    tip2 = bill_Value2 * .20;
+  } 
+  totalAmount2 = bill_Value2 + tip2;
+  console.log(`Total 2: ${totalAmount2}`);
+  console.log(`Bill 2: ${bill_Value2}`);
+  console.log(`Tip 2: ${tip2}`);
+  
+  case 40:
+  if (bill_Value3 >= 50 && bill_Value3 <= 300) {
+     tip3 = bill_Value3 * .15;
+  } else {
+    tip3 = bill_Value3 * .20;
+  } 
+  totalAmount3 = bill_Value3 + tip3;
+  console.log(`Total 3: ${totalAmount3}`);
+  console.log(`Bill 3: ${bill_Value3}`);
+  console.log(`Tip 3: ${tip3}`);
+
+  case 430:
+  if (bill_Value4 >= 50 && bill_Value4 <= 300) {
+     tip4 = bill_Value4 * .15;
+  } else {
+    tip4 = bill_Value4 * .20;
+  } 
+  totalAmount4 = bill_Value4 + tip4;
+  console.log(`Total 4: ${totalAmount4}`);
+  console.log(`Bill 4: ${bill_Value4}`);
+  console.log(`Tip 4: ${tip4}`);
+  break;
+
+  default:
+    console.log("Not a valid number");
+
+  }
+// // ---------------------------------------------------------------------------------------------------
+
+
+
+   </script> 
+</body>
+</html>
