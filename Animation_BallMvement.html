@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
+
+    <title>25 feb Assignment</title>
+</head>
+<style>
+
+
+    .Ball {
+
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: #007bff;
+        animation-name: Ballmovement;
+        animation-duration: 3s; 
+        animation-direction: alternate;
+        /* animation-iteration-count: infinite;
+        /* animation-timing-function: cubic-bezier(0.42, 0, 0.5, 0.51); */
+       
+
+    }
+
+    @keyframes Ballmovement {
+        0%{
+            transform: translateX(0px) translateY(0px);
+            /* background-color: #007bff; */
+        }
+
+        25% {
+            /* background-color: palegreen; */
+            transform: translateX(1200px);            
+        }
+        50%{
+            transform: translateX(1250px) translateY(500px);
+        }
+        75%
+        {
+
+            transform: translateY(500px) ;
+        }
+        100%{
+           transform: translateX(0x) translateY(0px);
+        } 
+       
+    }
+
+
+</style>
+
+<body>
+
+    <div class="Ball"></div>
+
+    <!-- div.box#box*6 -->
+
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
+
+    <title>1 March Assignment</title>
+</head>
+<style>
+    * {
+        padding: 0px;
+    }
+
+    .parentbox {
+        display: flex;
+        justify-content: center;
+        height: 48vw;
+        background-color: black;
+        align-items: center;
+    }
+
+    .WhiteBox1 {
+        height: 600px;
+        width: 900px;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Leftdiv {
+
+        border: 4px solid black;
+        text-align: center;
+        height: 267px;
+        width: 100px;
+    }
+
+    .Parentdiv {
+        background: green;
+    border-top: 4px solid black;
+    border-right: 4px solid black;
+    }
+
+    .childdiv {
+        display: flex;
+        justify-content: end;
+        padding: 10px;
+        column-gap: 10px;
+    }
+
+    .btn {
+        height: 30px;
+        width: 85px;
+        border: 2px solid black;
+
+    }
+
+    .box {
+        height: 50px;
+        width: 100px;
+        border: 2px solid black;
+    }
+
+    .footerbox {
+        background: pink;
+        height: 40px;
+        width: 360px;
+      border-top: 3px solid black;
+      border-bottom:3px solid black; 
+      text-align: center;
+    }
+</style>
+
+<body>
+
+    <div class="parentbox">
+        <div class="WhiteBox1">
+
+            <div class="Leftdiv">
+                Side bar
+            </div>
+
+            <div class="Parentdiv">
+
+                <div class="childdiv">
+                    <button class="btn"> Button</button>
+                    <button class="btn" type="button"> Button</button>
+                </div>
+                <div class="subchild">
+                    <section style=" display: flex;
+                    
+                        flex-direction: row;
+                        justify-content: end;
+                        column-gap: 10px;
+                        
+                        padding: 10px;" >
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </section>
+                    <section style=" display: flex;      
+                        flex-direction: row;
+                        justify-content: end; column-gap: 10px; padding: 10px; margin-bottom: 30px;" >      
+                    
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                </section>
+
+                </div>
+
+                <div class="footerbox"> Footer</div>
+            </div>
+
+
+        </div>
+
+    </div>
+</body>
+
+</html>
+
+<!-- <img style="display: block;-webkit-user-select: none;margin: auto;cursor: zoom-in;/* background-color: hsl(0, 0%, 90%); */transition: background-color 300ms;" src="https://res.cloudinary.com/dz209s6jk/image/upload/v1721234373/Challenges/jquszyijb2sxtpl3krck.jpg" width="50px" height="50px"> -->

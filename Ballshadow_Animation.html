@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
+
+    <title>1 March Assignment</title>
+</head>
+<style>
+    /* .BallShadow {
+        display: flex;
+        /* to enable flexbox layout. */
+    /* justify-content: center; */
+    /* to center the element horizontally */
+    /* align-items: center; */
+    /* to center the element vertically. */
+    /* height: 100vh; */
+    /* to make the body take up the full viewport height. */
+    /* margin: 0px; */
+    /* to remove the default margin. */
+    /* 
+     .ball {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(teal, #000);
+}
+
+.ball {
+  display: block;
+  transition: all 2s;
+}
+
+.ball-holder:hover .ball {
+  transform: translateX(calc(100vw - 80px)) rotate(360deg);
+}
+<div class="ball-holder">
+  <div class="ball"></div>
+</div> */
+
+    .CenterBall {
+
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: #007bff;
+        margin-inline: 47.5%;
+        animation-name: movingbutton;
+        animation-duration: 2.25s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(0.42, 0, 0.5, 0.51);
+    }
+
+    @keyframes movingbutton {
+        from {
+            transform: translateX(0px);
+            background-color: #007bff;
+            /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); */
+        }
+
+        to {
+            background-color: palegreen;
+            transform: translateY(570px);
+            /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); */
+        }
+
+    }
+
+    .BallShadow {
+        margin: 0px;
+        background: radial-gradient(50% 30%, #000 80%, #fff 100%);
+        height: 50px;
+        width: 200px;
+        left: 50.5%;
+        position: absolute;
+        animation-name: GrowingShadow;
+        animation-duration: 2.25s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(0.42, 0, 0.5, 0.51);
+    }
+
+    @keyframes GrowingShadow {
+
+        from {
+            bottom: 0;
+            margin-left: -100px;
+            /* height: 50px;
+            width: 200px; */
+        }
+
+        to {
+            bottom: 20px;
+            /* margin-left: 0; */
+            height: 20px;
+            width: 15px;
+        }
+    }
+</style>
+
+<body>
+    <!-- <div class="BouncyDiv"> -->
+    <div class="CenterBall"></div>
+    <div class="BallShadow"></div>
+    <!--  -->
+    <!-- </div> -->
+
+    <!-- div.box#box*6 -->
+
+</body>
+
+</html>
