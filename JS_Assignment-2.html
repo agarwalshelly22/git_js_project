@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+
+// 3 ****************************************************************
+
+let TeamA_Name = "Team A";
+let TeamB_Name = "Team B";
+
+let TeamA_Score1= 96;
+let TeamA_Score2= 108;
+let TeamA_Score3= 89;
+
+let TeamB_Score1 =88;
+let TeamB_Score2 =91;
+let TeamB_Score3 =110;
+
+ let teamA_CompeteCount = 3;
+ let teamB_CompeteCount = 3;
+
+ let teamA_Total;
+let teamB_Total;
+
+let teamA_Average;
+let teamB_Average;
+
+    teamA_Total = TeamA_Score1 + TeamA_Score2 + TeamA_Score3;
+    teamB_Total = TeamB_Score1 + TeamB_Score2 + TeamB_Score3;
+
+    teamA_Average = teamA_Total / teamA_CompeteCount;
+    console.log(`Average score of Team A: ${teamA_Average}`);
+
+    teamB_Average = teamB_Total / teamB_CompeteCount;
+    console.log(`Average score of Team B: ${teamB_Average}`);
+
+    if (teamA_Average > teamB_Average >= 100 )
+    {
+    console.log(`${TeamA_Name} highest "AVERAGE SCORE" wins trophy: ${teamA_Average}`);
+    }
+     else if(teamA_Average < teamB_Average >= 100 )
+    {
+    console.log(`${TeamB_Name} highest AVERAGE SCORE wins trophy: ${teamB_Average}`);
+    }
+   else if(teamA_Average == teamB_Average >= 100)
+  {
+      console.log(`${TeamA_Name} and ${teamA_Average} both have same  AVERAGE SCORE!!`);
+  }
+  else {
+    console.log("No team wins the trophy!!");
+  }
+ 
+// 4 ******************************************************************************************
+
+
+// -----------------GITHUB  UPLOAD--------
+
+// Git Stages-- gits bash commands---->  git init / git stage(file shows)
+
+// 1) Working Stages (M- modified)
+//       (git add filename)- For one file /  (git add .)- for all files
+// 2) Staging area (U - Untraked)
+//       (git commit -m"")
+// 3) Local repositery (A - Index added)
+    
+// ------------------------------------------------
+// ----------------------------------------------------------------------------------------------
+// function checkAge(age) {
+//   return (age >= 18) ? 'Adult' : 'Minor';
+// }
+
+// function calctip(bill) {
+//   return (bill >= 50 && bill <= 300) ? bill * .15' : bill * .20;
+// }
+
+// console.log(calctip(20)); // Output: Adult
+// console.log(calctip(15)); // Output: Minor
+
+  // ------------------------------------------------------------------------------------------
+
+  // if (bill_Value >= 50 && bill_Value <= 300) {
+  //    tip = bill_Value * .15;
+  // } else {
+  //   tip = bill_Value * .20;
+  // } 
+
+//    totalAmount = bill_Value + tip;
+// console.log(`Bill: ${bill_Value}`);
+// console.log(`Tip: ${tip}`);
+// console.log(`Total: ${totalAmount}`);
+
+
+ // ---------------------------------------------------------------------------------------------------
+
+//  let bill_Value = 316.25;
+//   let bill_Value2 = 275;
+//   let bill_Value3 = 40;
+//   let bill_Value4 = 430;
+    
+//   function calculateBill(billValue) {
+//     let tip;
+//     let totalAmount;
+
+//       if (billValue >= 50 && billValue <= 300) {
+//         tip = billValue * 0.15;
+//       } else {
+//         tip = billValue * 0.20;
+//       }
+
+//       totalAmount = billValue + tip;
+//         console.log(`Total: ${totalAmount}`);
+//         console.log(`Bill: ${billValue}`);
+//         console.log(`Tip: ${tip}`);
+//       }
+
+//   switch(1)
+//   {
+//         case 1: 
+//             calculateBill(bill_Value);
+//         case 2:
+//              calculateBill(bill_Value2);
+//         case 3:
+//             calculateBill(bill_Value3);
+//         case 4:
+//              calculateBill(bill_Value4);
+//         break;
+  
+//     default:
+//         console.log("Not a valid number")
+//   }
+
+
+
+   </script> 
+</body>
+</html>
