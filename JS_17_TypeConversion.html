@@ -226,22 +226,22 @@ if (23>10){
 // --Statement and "Rahul is value as Expression"
  const me ="Rahul";   
 
-// ${inside we can only use Expresssions} and 
-// can not use statements inside ${} 
+// ${inside we can only use "Expresssions"} and 
+// CAN NOT use statements inside ${} 
 console.log(`I'm ${2025 - 1998} years old ${me}`);
 
 
-// ----USE TERNERY OPERATOR:
 // if we want "if else" condition funtionality then use
+// ----USE TERNERY OPERATOR:
 const ag = 19;
-// console.log(`you ${if (age>18)} can drive a car`);  you can not use "if statement" inside $
+// console.log(`you ${if (age>18)} can drive a car`);  you "CAN NOT USE "if statement" inside ${Expr only- return values} 
 console.log (`you ${ag>18 ? "can" : "cannot"} drive a car`);
+// OR
+let agg=12;
+age = agg>18 ? "Car":"Bycle"
+console.log(`You can drive a ${age}`);
 
-
-let age = 12;
-console.log(`you can drive a  ${ age>18 ? "Car": "Bycycle"}`);
-
-
+// Instead of IF Else--
 // if(age>18)
 // {
 //   console.log("Can drive a car");
@@ -266,9 +266,8 @@ function logger(name, age)
  logger("Vishal", 28);
  logger("Anu", 38);
 
-
-
   // file- pre- snipt- new global snipt file
+
    </script> 
 </body>
 </html>
