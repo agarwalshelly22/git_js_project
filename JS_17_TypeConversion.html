@@ -157,53 +157,59 @@ switch (day) {
 // -----------------GITHUB  UPLOAD--------
 
 //************ Git 3 Stages COMMANDS***************-
-// **gits bash commands**-->  git init / git stage(file shows) OR (for checking FILE status)
+// **gits bash commands**-->  Tracking and Commiting stages
 
-// 1) Working Stages      (M- modified)
-//  git add <filename>     only For one file  
-//  git add .               for all files
+//  git init  (U - Untracked red color and no idea this file name.) 
+//  git stage (Git Tracking or for checking FILE status)
 
-// 2) Staging Area (U - Untraked)
-//       (git commit -m"")
+// 1) Working Stages    (U-UNTRACKED files "red color" and no idea this file name.) / (M- modified "White color")
+//  git add <filename>     only For one file after Untracked
+//  git add .               for all changes into staging files mostly after modified
 
-// 3) Local repositery (A - Index added)
+// 2) Staging Area   (A-Index ADDED "green color" now git know and ready for 3rd stage) / (IM-Index Modified through cursor)
+//   (git commit -m"")    for IndexAdded commit and IndexModified commit
 
-// 4)Commands FOR-- *****Git LOGS and HISTORY****
-//   git status 
+// 3) Local repositery (Msg clear) 
+
+// (4) Remote Repository(GITHUB)----Use terminal in js project
+//    git config user.email
+//    create new repository in Github
+//    Push command lines from github repository Like-- remote add origin, change branch name to Main for github repos, git push -u origin main (for push code to github repo)
+
+
+
+//5) Commands FOR-- *****Git LOGS and HISTORY****
+//   git status          (after commit)
 //   git log             (All history, why did commit?, what time, and which user did?)
 //   git log --oneline   (compact history view and what changes done.)
-//   git log <filename>  (full history for particular one file) 
+//   git log <filename>  (full Commit history for particular one file) 
 
   // *******************************************************************************************
 
-// **********Git Branch*************--Extra power to "Github" where we can use code in a "systematic ways".
+//6) **********Git Branches*************--Extra power to "Github" where we can use code in a "systematic ways".
+
 // 1) Main branch called "MASTER".
 // 2) develop(dev) branch- ("Feature branch" changes merge into "develop branch".)
 // 3) Feature branch add.
 // How to create branch and move from one to another?
 
 //**** Git Branch Command--
+
 // git branch             (first shows only "Master Branch" name)
-// git branch develop     (For Creating new branch name called "Develop branch")
-// git branch             (shows  branch name "master and develop")
+// git branch develop     (For "CREATING new branch" name called "Develop branch")
+// git branch             (SHOWS all branch names "master and develop")
 // git checkout develop   (for SWITCH to branch "DEVELOP")
-// git status              (only shows on develop branch)
+// git status              (only shows develop branch files which is not modified commited)
 // git add <filename>      (For "STAGING AREA" in "DEVELOP branch") 
 // git commit -m ""        (Commit into DEVELOP Branch)
 
 // git branch rahul/feature-sum  (add feature branch with the name of rahul)
 //  git branch                   (to check branchh names)
-// git checkout master           (switch to branch master)
-// git merge rahul/feature  batch
+// git checkout develop           (switch to the parent branch of merge code)
+// git merge rahul/feature-sum   (then merge and always merge updated code to the parent branch)
 
-
-
-
-
-
-
-
-
+// git branch -d rahul/feature-sum  (for delete branch -d if merge then delete)
+// git branch -D rahul/feature-sum  ( Either merge or not, will deleted)
 
 
 // -------------------28/April--------------------------------
@@ -217,10 +223,24 @@ console.log(`I'm ${2025 - 1998} years old ${me}`);
 
 const age = 16;
 console.log=('You ${age >}')
-  // ------------------------------------------------
 
-  console.log("End of the file by shivani");
+  // --------------------29/April----------------------------
 
+//  funtions and parameters Lists
+
+function logger(name, age)
+{
+  console.log (`My name is ${name}. I'm ${age} years old!`);
+   
+}
+  // calling
+ logger("rahul", 18);
+ logger("Vishal", 28);
+ logger("Anu", 38);
+
+
+
+  // file- pre- snipt- new global snipt file
    </script> 
 </body>
 </html>
