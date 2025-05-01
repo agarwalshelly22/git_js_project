@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        "use strict";
+
+        // ------------29/April----------
+
+        console.log("Javascript Part 2");
+        // Use "cl" for console.log
+        console.log('');
+        // remove single quotes from shelly.code-snippes
+        console.log();
+
+
+        // Activating Srtict Mode : " Use Strict"
+
+        let hasDriverLicence = false;
+        //   const passTest =false;
+        const passTest = true;
+        //  alwaays see true cond.
+        if (passTest)
+            hasDriverLicence = true;
+        if (hasDriverLicence)
+            console.log("I can drive");
+
+        // const interface="car";
+        // const private = false;
+
+
+        // Funtions: takes input and generate output
+
+        //1. FUNCTIONS: for same output
+        function calling() {
+            console.log("Rahul calling");
+        }
+        //  Calling/running/invoking a funtion
+        calling();
+        calling();
+        calling();
+
+        //2. Upgrade FUNCTIONS : calling through parameter(or more than one para.)
+        //  for different outputs but this only PRINT value not retuning anything 
+
+        function call(name, age) {
+            console.log(`My name is ${name} and age is  ${age}`);
+        }
+        //  Calling/running/invoking a funtion
+        call("Rahul", 10);
+        call("shriya", 20);
+        call("Shobhit", 30);
+
+        //3. Funtion: but not Returning value
+
+        function fruitproc(apple, orange) {
+
+            //  both gives same output whether you store through const value or print
+            console.log(`${apple} and ${orange}`);
+            const juice = (`${apple} and ${orange}`);
+            console.log(juice);
+        }
+        fruitproc(5, 0);
+
+
+        //4. Funtion: how to Return value
+        function fruitprocessor(apple, orange) {
+            //  store in string
+            const juice = (`Juice with ${apple} apples and ${orange} orange`);
+            //  For "return value" and funtion always does return value
+            return juice;
+            //   console.log(juice) ; For only print value
+        }
+        //   console.log(fruitprocessor(5, 0)); only shows print value
+        
+        // now, funtion has return value or output, so we can store into a variable and can reuse value and print
+        const fruitjuice = fruitprocessor(5, 0);
+        const fruitorange = fruitprocessor(0, 5);
+        console.log(fruitjuice);
+        console.log(fruitorange);
+
+
+    </script>
+</body>
+
+</html>
