@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+
+// ==================1• What are the different data types in JavaScript?==========================
+
+// 1 JavaScript has eight data types. They are categorized as either primitive or non-primitive.
+
+// Primitive Data Types:
+// # Number
+// # String
+// # Boolean
+// # Null
+// # Undefined
+// # Symbol
+// # BigInt
+
+// Non-Primitive Data Types:
+// # Object
+
+// ===============2• What is the difference between null and undefined?=======================
+
+// Both null and undefined represent the absence of a value, but they serve different purposes: 
+
+// undefined:
+// This is the default value assigned to a variable that has been declared but not yet initialized. It also represents the absence of a return value from a function or the absence of a property in an object. 
+// eg- let x;
+// console.log(x); // Output: undefined
+
+// null:
+// This is an assignment value. It represents the intentional absence of a value. It is used by programmers to explicitly indicate that a variable has no value. 
+// ex- let y = null;
+// console.log(y); // Output: null
+
+
+
+//  =================3• What is the output of typeof null?==========================================
+
+// The output of typeof null returns "object"
+console.log(typeof null);  // Output: object
+
+
+//=================== 4• What are the different types of conditional statements in JavaScript?====================
+
+//  There are the different types of conditional statements are as follows.
+// 1) if statement: 
+// 2) else statement:
+// 3) else if statement: 
+// 4) switch statement.
+// 5) Ternary operator.
+
+
+//  ================5• How does == differ from ===? =========================
+// The Equality Operator “==” compares only content, whereas the strict equality operator “===” compares both content and type.
+
+
+//  ================== 6• Identify and fix the issue in: if (num = 10) { console.log("Ten"); } ================
+let num = 10;
+if (num == 10) { console.log("Ten"); }
+
+//  =================== 7• What is a ternary operator and when is it useful?==================
+
+// The ternary operator is a shorthand way of writing an if...else statement and is useful in situations where a simple if...else statement would be used to assign a value to a variable or return a value from a function, based on a condition. It can make the code more concise and readable in these cases.
+
+// eg- condition ? expressionIfTrue : expressionIfFalse;
+
+
+// ================8• Rewrite an if-else condition checking if a person can vote based on age using a ternary operator.=============
+
+ let voter_age = 10;
+ let Eligible_age = voter_age >= 18 ? "Eligible" : "Not Eligible"; 
+console.log (`you are ${Eligible_age} for vote`);
+
+
+// =============== 9• What is the difference between a function declaration and a function expression?================
+
+// The differences between function declarations are hoisted, meaning they can be called before they are defined in the code where as function expression are not hoisted.
+
+
+//================ 10• What is a callback function? ===============
+
+// A Callback functions are functions that are deployed after the first function completes its task.
+
+// eg- function greeting(name) {
+//   console.log('Hello ' + name);
+// }
+
+// function processUserInput(callback) {
+//   var name = prompt('Please enter your name.');
+//   greeting(name);
+// }
+
+// processUserInput(greeting);
+
+// ==================11• Create a function that returns the square of a number.=========================
+
+function square(x){
+  const result_sq = x*x;
+  return result_sq;
+}
+
+let a = 9;
+const result = square(a);
+console.log(result);
+
+
+// ================12• What is the result of calling a function without providing expected arguments?================
+
+// The result of calling a function without providing expected arguments will be "undefined".
+
+function calling(){
+  // const result_sq= x1;
+  // return result_sq;
+  // console.log("hello")
+ // return "hello";
+}
+console.log(calling());
+
+
+// ============13• What are some commonly used array methods in JavaScript?=============
+
+// Some commonly used array methods are-
+// Push(); - Adds one or more elements to the end of an array. Ad- L
+// unshift();- Adds one or more elements to the beginning of an array. Ad- F
+// Pop(); -Removes the last element from an array. Rmv-L
+// shift();-Removes the first element from an array. Rmv- F
+
+// indexof(); - Returns the first index at which a given element can be found in the array.
+// includes(); - array includes a certain value among its entries, returning true or false.
+// forEach(); - Executes a provided function once for each array element.
+// find(); - Returns the value of the first element in the array.
+// concat(); - joining with other array.
+// slice(); - Returns a shallow copy of a portion of an array into a new array object selected from start to end.
+
+//============ 14• How are arrays different from objects in JavaScript?=================
+
+// Arrays are ordered list of values, accessed by numerical index starting from 0 (e.g., myArray[0]), where as
+// objects are collection of key-value pairs, accessed using dot notation (e.g., myObject.name) or bracket notation with the 
+// key as a string (e.g., myObject["name"]), where key are strings (or symbols) and values 
+// can be any data type.
+
+
+
+// =============15• Add a new element to the end of an array.===============
+
+const ArrayList =["a", "b", "c", "d", "e"];
+// new element to the end
+ArrayList.push("f");
+// ArrayList.pop();
+// ArrayList.shift();
+// ArrayList.unshift("g");
+
+console.log(ArrayList);
+
+
+//==============16• What will be the output of ["a", "b", "c"].length?=================
+
+const Arr = ["a", "b", "c"]
+console.log(Arr.length); // Output is 3
+
+// ==============17• What is the difference between dot notation and bracket notation when accessing object properties?===========
+
+// "Dot. notation" is generally simpler and more readable for accessing static, valid JavaScript identifiers,
+//  while "bracket[] notation" is more flexible and allows accessing properties with dynamic or invalid property names. 
+
+// 18• How do you loop over the properties of an object?
+
+// 1) for in Loop 
+// 2) Object.keys() with forEach() 
+// 3) Object.values() 
+// 4) Object.entries()
+// 5) forEach() on Arrays of Objects
+// 6) for of Loop 
+// 7) map() Method
+// 8) reduce() Method
+
+// 19• How would you access a nested property like address.city from an object?   // not clear
+
+
+
+//  ===========20• How do you add a new key-value pair to an existing object?===============
+
+ const Per_object= {
+  Name :"Shivani",
+  age: 24,
+
+  isEmployed: true,
+ }
+ //Adding new key-value pair
+Per_object.age = 24;
+Per_object.isEmployed =true;
+
+ //Accessing properties
+ console.log(Per_object["Name"]);
+ console.log(Per_object.age);
+
+ // Print values
+ console.log(Per_object);
+
+// =============21• What are the different types of loops in JavaScript?==============
+
+// There are different types of loops in JavaScript are as follows:
+// 1) For loop. 
+// 2) While loop.
+// 3) Do while loop
+// 4) for of loop.
+// 5) for in loop
+// 6) Foreach loop
+
+// ====================22• When should you use for...of instead of for...in?==================
+
+// for in loop-  loops through the keys of an object. 
+// for of loop-  loops through the keys values of an object. 
+
+
+// =================23• Write a for loop to print numbers from 1 to 5.===============
+
+for(let i=1 ; i<=5 ; i++)
+{
+  console.log("Print number " +i)
+}
+
+// ===============24• Loop through an array and print each item.===============
+
+const list_arr =["a", "b", "c", "d", "e"];
+
+for(let i=0; i <= list_arr.length-1 ; i++)
+{
+  console.log('Value of an array ' + list_arr[i]);
+}
+
+
+
+   </script> 
+</body>
+</html>
