@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!-- User input  -->
+<!-- Number1: <input id="num1" type="text">
+Number2:<input id="num2" type="text">
+<p id="nsum"></p>
+<p id="nsum2"></p>
+<button onclick="Sum()"> click</button> -->
+
+<!-- sum function -->
+<!-- <button onclick="twonumbsum()"> Sum</button> -->
+
+<!-- Change in green -->
+<!-- <div id="grn"> Hrishab </div>
+<button onclick="color_grn()">Click For green btn</button> -->
+
+
+<!-- if Else condition -->
+Voter Age: <input type="number" id="voter_age">
+<br>
+<p id="voter"></p>
+<button onclick="age_Limit()">Click</button>
+
+<body>
+
+    <script>
+
+        // if else condition voter age
+        function age_Limit() {
+            const age = document.getElementById("voter_age").value;
+            if (age >= 18) {
+                document.getElementById("voter").innerHTML = "Elligible";
+            }
+            else {
+                document.getElementById("voter").innerHTML = "Not Elligible";
+            }
+        }
+
+
+        // chnange green color
+
+        function color_grn() {
+            document.getElementById("grn").style.color = "red";
+
+
+        }
+
+
+        // user input
+        function Sum() {
+            let a = parseInt(document.getElementById("num1").value)  // Get values
+
+            let b = parseInt(document.getElementById("num2").value)
+
+            document.getElementById("nsum").innerHTML = a + b; //print in html
+        }
+
+
+        // sum
+        function twonumbsum() {
+            let a = 1;
+            let b = 1;
+            document.getElementById("nsum2").innerHTML = a + b; //Print in html
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

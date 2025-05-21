@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<!-- -----------------HTML---------------- -->
+<html lang="en">
+<!-- -----------------Head---------------- -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ----------------Title---------------- -->
+    <!-- -----------------test---------------- -->
+    <title>Document</title>
+</head>
+
+<!-- -----------------body---------------- -->
+
+<body>
+
+    <header>
+        <!-- -----------------Element <h1>-<p>--------------- -->
+        <!-- -----------------text(My header) (My paragraph)---------------- -->
+        <h1>Guess My number</h1>
+        <p class="extra-info">Between (1 to 20)</p>
+        <button class="btn restart">Restart</button>
+
+        <div class="number">?</div>
+    </header>
+
+    <main>
+
+        <section class="left">
+            <input type="number" class="guess">
+            <button class="btn check">check!</button>
+        </section>
+
+        <section class="right">
+            <p class="message"> Start guseing</p>
+            <p class="label-Chance">Chance:<span class="chance">20</span> </p>
+            <p class="label-score">High score:<span class="Highscore">0</span> </p>
+        </section>
+
+    </main>
+
+    <script>
+
+
+        document.querySelector(".restart").addEventListener("click", function () {
+            let secretNmuber = Math.trunc(Math.random() * 20 + 1);
+            // document.querySelector(".number").textContent = secretNmuber;
+
+            document.querySelector("body").style.background = "white"
+            document.querySelector(".guess").value = ""
+            document.querySelector(".message").textContent = "Start gessing";
+            //for any Css properties Use Style
+            document.querySelector(".chance").textContent = 20;
+            document.querySelector(".Highscore").textContent = chance
+        })
+
+
+
+
+
+
+        // 5 Common examples of "Event"
+        // 1) Click -User click a button.
+        // 2) mouseover - User moves mouse over an Element
+        // 3) keydown - User presses a key
+        // 4) submit - Form is submitted
+        // 5) Load - page or image is loaded
+
+        // ---------------------------------------------
+        // console.log(document);
+        // console.log(document.querySelector(".message"));
+        // console.log(document.querySelector(".message").textContent);
+        // document.querySelector(".message").textContent="Corret Number"
+        // document.querySelector("guess").value=10; (update)
+        // console.log(document.querySelector("guess").value); (get value)
+
+        // ---------------------------------------------------------
+        let chance = 20
+        let secretNmuber = Math.trunc(Math.random() * 20 + 1);
+        // document.querySelector(".number").textContent = secretNmuber;
+        document.querySelector(".chance").textContent = chance;
+
+        // console.log(secretNmuber);
+
+        // "Functions"->(You can't call funtion outside, so funtion without name also called Anonyms)
+        // "Callback(Pass in Parameter)"", "Anonyms(no name)"
+        document.querySelector(".check").addEventListener("click", function handleclick() {
+            console.log("clicked");
+            const guess_num = Number(document.querySelector(".guess").value); //Empty string converts into number -> shows result 0
+
+
+
+            if (guess_num == 0 || guess_num < 1 || guess_num > 20) {
+                console.log(document.querySelector(".message").textContent);
+                document.querySelector(".message").textContent = "Not a valid number"
+
+            }
+
+
+            else if (guess_num < secretNmuber) {
+
+
+                if (chance > 1) {
+                    document.querySelector(".message").textContent = "Too Low"
+                    chance--;
+                    document.querySelector(".chance").textContent = chance;
+                }
+                else {
+                    document.querySelector(".message").textContent = "You lost the game"
+                    chance = 0
+                    document.querySelector(".chance").textContent = chance;
+                }
+
+            }
+            else if (guess_num > secretNmuber) {
+
+
+                if (chance > 1) {
+                    document.querySelector(".message").textContent = "Too high"
+                    chance--;
+                    document.querySelector(".chance").textContent = chance;
+                }
+                else {
+                    document.querySelector(".message").textContent = "You lost the game"
+                    chance = 0
+                    document.querySelector(".chance").textContent = chance;
+                }
+            }
+            else if (guess_num === secretNmuber) {
+                document.querySelector(".number").textContent = secretNmuber;
+                document.querySelector(".message").textContent = "Correct Number"
+                document.querySelector("body").style.background = "green" //for any Css properties Use Style
+                const chance = document.querySelector(".chance").textContent
+                const highscore = document.querySelector(".Highscore").textContent
+                if (chance > highscore) {
+                    document.querySelector(".Highscore").textContent = chance
+                }
+            }
+        });
+
+
+
+    </script>
+</body>
+
+</html>

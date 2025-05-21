@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            color: #333;
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            background: linear-gradient(to top left, rgb(0, 128, 126), pink);
+        } 
+
+        .modal {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70%;
+            padding: 3rem;
+            border-radius: 8px;
+        } 
+          .hidden
+          {
+            display: none;
+          }
+    </style>
+</head>
+
+
+<body>
+
+    <button class="Show-modal-1">Show modal 1</button>
+    <button class="Show-modal-2">Show modal 2</button>
+    <button class="Show-modal-3">Show modal 3</button>
+
+
+    <div class="modal hidden"  style="border: 2px solid #000;">
+        <button class="close-modal">Close</button>
+        <h1>this is modal window</h1>
+
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit blanditiis vel at? Alias ducimus repellat
+            temporibus reiciendis voluptatum maxime harum earum nulla perspiciatis fugiat voluptates porro veritatis
+            numquam fuga consectetur deleniti facilis debitis, quas molestiae laborum ipsa unde aliquid. Voluptate
+            nostrum neque, quae facere pariatur fugit saepe commodi sapiente amet odit libero itaque similique
+            cupiditate doloremque incidunt ullam optio corporis.
+        </p>
+    </div>
+    <script>
+
+        
+document.querySelector(".Show-modal-1").addEventListener("click", function(){
+
+document.querySelector(".modal").classList.remove("hidden");
+
+});
+
+document.querySelector(".close-modal").addEventListener("click", function(){
+    
+    document.querySelector(".modal").classList.add("hidden");
+
+})
+
+
+    </script>
+
+</body>
+
+</html>

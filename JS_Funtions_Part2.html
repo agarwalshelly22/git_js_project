@@ -258,7 +258,7 @@
         console.log(newlength1);
 
 
-        // -----------------------------30/April----------
+        // -----------------------------5/May----------
 
 
         // // Add Element
@@ -278,7 +278,8 @@
 
         // const rahulArray = ["Rahul", "Sharma", 2025 - 1996, "Teacher"];
 
-        // -----------------------------4/May----------
+        // -----------------------------5/May----------
+        //  objects
 
         // const Summary = {
         //     Firstname: "Rahul",
@@ -294,7 +295,11 @@
 
         // }
 
+
+
         // --------------------------------6/May-----------------------
+
+        //  Loop- repeatedly executes a block of code as long as a specified condition is true
 
         // incr loop -- initialze; condition ; increment
         for (let i = 1; i <= 10; i++) {
@@ -311,7 +316,7 @@
         for (let i = 1; i <= 10; i++) {
             console.log(`${table}* ${i} =${table * i}`);
         }
-        
+
         // Array with loop
         const rahulArr = [
             "Rahul",
@@ -330,7 +335,87 @@
             console.log(rahulArr[i]);
         }
 
-        // </script>
+        // -------------------------13/April--------------
+
+        // Nested loop-  The inner loop executes completely for each iteration of the outer loop.
+        //  This structure is commonly used to work with multi-dimensional arrays or to perform repetitive tasks that depend on multiple variables. 
+
+        // Nested Loop
+        for (let i = 0; i < 10; i++) {
+            for (let j = 0; j < 10; j++) {
+                console.log(i + '' + j)
+            }
+        }
+
+        // Print Even numbers 1 to 20
+        for (let i = 1; i <= 20; i++) {
+            if (i % 2 == 0)
+                console.log(i);
+        }
+        // OR
+
+        for (let i = 2; i <= 20; i = i + 2) {
+            if (i % 2 == 0) {
+                console.log(i);
+            }
+        }
+
+        // Factorial of a number 5
+
+        let f = 1; // inialize
+        for (let i = 1; i <= 5; i++) {
+            f = i * f; // f= (update value)
+            console.log(f);
+        }
+
+        //Largest and second largest element in array-
+
+        const num = [45, 12, 6, 24, 52, 13, 25, 66, 18, 7];
+        let Largest = num[0]; // 45
+        let second_Largest = num[0];
+        for (let i = 0; i < num.length; i++) {
+            if (num[i] > Largest) {
+                Largest = num[i];
+            }
+        }
+        for (let i = 0; i < num.length; i++) {
+            if (num[i] > second_Largest && num[i] != Largest)
+                second_Largest = num[i];
+        }
+        console.log(Largest);
+        console.log(second_Largest);
+
+        // ======================================14/April=========================================
+
+        let dice = Math.trunc(Math.random() * 6 + 1);
+
+        // Math.random => 0.00000 - 0.99999
+        // Math.random() *6 => 0.0000006 - 5.9999994
+        // Math.random() * 6+ 1 => 1.000006 -6.99999994
+        // Math.trunc(Math.random() * 6 +1)=> 1-6
+
+        while (dice != 6) {
+            console.log(`you rolled a ${dice}`);
+
+            dice = Math.trunc(Math.random() * 6 + 1);
+            if (dice == 6) {
+                console.log("Loop is about to end..");
+            }
+        }
+
+        
+
+
+
+
+
+
+
+
+
+
+
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<style>
+    #btn1 {
+        height: 100px;
+        width: 100px;
+        border-radius: 100px;
+        border: 2px solid red;
+        background-color: red;
+        margin-left: 18px;
+        margin-top: 7px;
+    }
+
+    #btn2 {
+        height: 100px;
+        width: 100px;
+        border-radius: 100px;
+        border: 2px solid yellow;
+        background-color: yellow;
+        margin-left: 18px;
+    }
+
+    #btn3 {
+        height: 100px;
+        width: 100px;
+        border-radius: 100px;
+        border: 2px solid green;
+        background-color: green;
+        margin-left: 18px;
+    }
+
+    .btn {
+
+        width: 95px;
+        padding: 10px;
+        margin-left: 25px;
+        margin-top: 7px;
+        margin-bottom: 7px;
+
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        /* height: 48vw; */
+        /* background-color: pink; */
+        align-content: center;
+    }
+</style>
+
+
+
+<body>
+
+    <!-- <h1>this is Javascript </h1> -->
+    <!-- <h1 id="demo">this is Javascript </h1> -->
+    <!-- <h1>Rishab <span id="demo"> </span></h1> -->
+    <!-- <h1 id="demo2">javascript by Rishab</h1> -->
+    <!-- 
+<button onclick="day1()">click </button>
+
+<button onclick="Sum()">SUM </button>
+
+
+Number1:<input type=" number" id="num1">
+Number2:<input type="number" id="num2">
+<h1 id="demo"></h1>
+<button onclick="sum_Int()">Sum of two number</button>
+<br>
+
+<div id="change_color">Hrishabh</div>
+<button onclick="Green_Color()"></button> -->
+
+    <!-- If else Elligible -->
+    <!-- Number1:<input type=" number" id="num1"> 
+
+<h1 id="result"></h1>
+<button onclick="age()">Sum of two number</button> 
+
+<br>
+<br> -->
+    <!-- blood donation -->
+    <!-- Blood donation age:<input type=" number" id="num1">
+
+<h1 id="Bloodres"></h1>
+<button onclick="age()">Click</button> -->
+
+
+    <!----------18/April-------->
+    <!-- 
+<h1 id="demo"></h1>
+<button onclick="check_age()">Click</button> -->
+
+    <!-- Pos and Neg : <input type="number" id="pos_neg">
+<p id="show_result"></p>
+<button onclick="PosNeg_number()">Click</button> -->
+
+    <!-- 
+Students Marks <input type="number" id="std_Marks" placeholder="Enter your number">
+<h1 id="Marks_rst"></h1>
+<button onclick="Calc_Marks()">Results</button> -->
+
+
+
+
+    <!-- -----------------20/April------------------------------- -->
+
+    <div class="container">
+        <div style="background-color:black; width: 140px;">
+            <div id="btn1">
+            </div>
+            <button onclick="red_Click()" class="btn">Red Click</button>
+
+            <div id="btn2">
+            </div>
+            <button onclick="yellow_Click()" class="btn">Yellow Click</button>
+
+            <div id="btn3">
+            </div>
+            <button onclick="green_Click()" class="btn">Green Click</button>
+        </div>
+    </div>
+
+    <!-- -----------------21/April------------------------------- -->
+    <!-- <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p> -->
+
+    <p id="tbl"></p>
+
+
+
+
+    
+    <script>
+
+        // ==================================21/April=========================================
+
+        let temp = 5;
+        for (let i = 1; i <= 10; i++) {
+            let rst = temp * i;
+            document.getElementById("tbl").innerHTML += "5 * " + i + " = " + rst + "<br>"
+        }
+
+        // ---------------------------------------------------------------------------
+
+        for (let i = 0; i <= 15; i++) {
+            document.getElementById("demo1").innerHTML += i + "<br>";
+            if (i % 2 == 0) {
+                document.getElementById("demo2").innerHTML += i + "<br>";
+            }
+            else {
+                document.getElementById("demo3").innerHTML += i + "<br>";
+            }
+        }
+
+
+
+        // ========================20/April===================================================
+
+        function red_Click() {
+            document.getElementById("btn1").style.backgroundColor = "red"
+            document.getElementById("btn2").style.backgroundColor = "white"
+            document.getElementById("btn3").style.backgroundColor = "white"
+        }
+
+        function yellow_Click() {
+            document.getElementById("btn1").style.backgroundColor = "white"
+            document.getElementById("btn2").style.backgroundColor = "yellow"
+            document.getElementById("btn3").style.backgroundColor = "white"
+        }
+
+        function green_Click() {
+            document.getElementById("btn1").style.backgroundColor = "white"
+            document.getElementById("btn2").style.backgroundColor = "white"
+            document.getElementById("btn3").style.backgroundColor = "green"
+        }
+        //  <!-- ===========================================19/April(Assignment)========================================================== -->
+
+        // #Conditions
+
+        // <33: fail
+        // 33-55 d
+        // 56-75 c
+        // 76-85 b
+        // 86-95 a
+        // 95+ a+
+
+        function Calc_Marks() {
+            const stu_Marks = document.getElementById("std_Marks").value;
+            console.log(stu_Marks);
+
+            if (stu_Marks < 33) {
+                document.getElementById("Marks_rst").innerHTML = "Students have Failed the class"
+            }
+            else if (stu_Marks >= 33 && stu_Marks <= 55) {
+                //  const rest=   console.log(stu_Marks >= 33 || stu_Marks >= 55)
+                //  console.log(rest)
+                document.getElementById("Marks_rst").innerHTML = "Students have got D grade"
+            }
+            else if (stu_Marks > 55 && stu_Marks <= 75) {
+                // console.log(stu_Marks >= 56 || stu_Marks <= 75 );
+                document.getElementById("Marks_rst").innerHTML = "Students have got C grade"
+            }
+            else if (stu_Marks > 75 && stu_Marks <= 85) {
+                document.getElementById("Marks_rst").innerHTML = "Students have got B grade"
+            }
+            else if (stu_Marks > 85 && stu_Marks <= 95) {
+                document.getElementById("Marks_rst").innerHTML = "Students have got A grade"
+            }
+            else {
+                document.getElementById("Marks_rst").innerHTML = "Students have got A+ grade"
+            }
+        }
+
+
+        // ================================================19/April=====================================================
+
+
+
+
+        // function PosNeg_number() {
+        //     const posneg_num=  document.getElementById("pos_neg").value;
+        //     if ( posneg_num > 0) {
+        //         document.getElementById("show_result").innerHTML = "Positive number";
+        //     }
+        //     else if(posneg_num==0)
+        //     {
+        //         document.getElementById("show_result").innerHTML = "The  number is zero";
+        //     }
+        //     else {
+        //         document.getElementById("show_result").innerHTML = "negative number";
+        //     }
+        // }
+
+
+        // function odEvn_number()
+        // {
+        //   const oddevn_rst=  document.getElementById("od_evn").value;
+        //   if(oddevn_rst % 2 ==0 )
+        //   {
+        //     document.getElementById("show_result").innerHTML = "Even number";
+        //   }
+        //   else
+        //   {
+        //     document.getElementById("show_result").innerHTML="Odd number";
+        //   }
+        // }
+
+
+
+
+
+
+        // ========================================15/April=================================================
+
+
+
+
+        // function age() {
+        //     const age = document.getElementById("num1").value;
+        //     if (age >= 50) {
+        //         // alert("Ellig");
+        //         document.getElementById("Bloodres").innerHTML="Ellig for blood donation"
+        //     }
+        //     else {
+        //         // alert("not elig");
+        //         document.getElementById("Bloodres").innerHTML="not Ellig for blood donation"
+        //     }
+        // }
+
+
+
+
+        // function age() {
+        //     const age = document.getElementById("num1").value;
+        //     if (age >= 18) {
+        //         // alert("Ellig");
+        //         document.getElementById("result").innerHTML="Ellig"
+        //     }
+        //     else {
+        //         // alert("not elig");
+        //         document.getElementById("result").innerHTML="not Ellig"
+        //     }
+        // }
+
+
+
+        // ================================================14/April=====================================================
+
+
+        // function Green_Color() {
+        //     document.getElementById("change_color").style.color = "red";
+
+        // }
+
+
+        // //User input sum
+        // function sum_Int() {
+        //     let a = parseInt(document.getElementById("num1").value);
+        //     let b = parseInt(document.getElementById("num2").value);
+        //     document.getElementById("demo").innerHTML = a + b;
+        // }
+
+
+        // //static input sum
+        // function Sum() {
+        //     let a = 10;
+        //     let b = 20;
+        //     document.getElementById("demo").innerHTML = a + b
+        // }
+
+
+        // ======================================13/April==========================================
+
+        // Js is scipting lang where we can manage front-end and back-end both. Js works on both front-end and back-end.
+        //  <script> Scripting is used to create the funtions of the softwares and web applications.
+
+
+        //     JavaScript is a scripting language or the Programming Language for the Web.
+        //    It can calculate, manipulate and validate data.
+
+        //     console. log()-- should only be used when working with an "Internet Browser console"
+        //      while “document. write()” -- should only be used when "working with HTML" 
+        //       while getElementById()-- only works with "ID attributes"
+        // -----------------------------------------------------------------------------------------------
+
+        // write on console
+        // console.log("a");
+
+
+        function day1() {
+            // document.write("this  document write bug");   // writes in body
+            document.getElementById("demo").innerHTML = "krishna"  // Worls on innerhtml
+            // document.getElementById("demo2").innerHTML="Krishna" 
+        }
+        // day1();
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
