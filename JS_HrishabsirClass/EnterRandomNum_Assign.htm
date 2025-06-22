@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #display {
+            display: flex;
+            gap: 10px;
+            background-color: rgb(193, 70, 70);
+            height: 167px;
+            width: 200px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .Num1 {
+
+            height: 20px;
+            width: 20px;
+            background-color: white;
+            border-bottom: 1px solid black;
+        }
+
+        #keypad {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            width: 200px;
+            height: 107px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ---------------------------------2/June (generate OTP by Random num)--------------------------------------- -->
+
+    <div class="Calculator">
+        <input type="text" id="display" readonly>
+
+        <div class="button">
+            <button onclick="cleardisplay()">AC</button>
+            <button class="number-button" value="1" onclick="appendvalue('1');">1</button>
+            <button class="number-button" value="2" onclick="appendvalue('2');">2</button>
+            <button class="number-button" value="3" onclick="appendvalue('3');">3</button>
+            <button class="number-button" value="4" onclick="appendvalue('4');">4</button>
+            <button class="number-button" value="5" onclick="appendvalue('5');">5</button>
+            <button class="number-button" value="6" onclick="appendvalue('6');">6</button>
+            <button class="number-button" value="7" onclick="appendvalue('7');">7</button>
+            <button class="number-button" value="8" onclick="appendvalue('8');">8</button>
+            <button class="number-button" value="9" onclick="appendvalue('9');">9</button>
+            <button class="number-button" value="9" onclick="appendvalue('+');">+</button>
+            <button class="number-button" value="9" onclick="appendvalue('-');">-</button>
+            <button class="number-button" value="9" onclick="appendvalue('*');">*</button>
+            <button class="number-button" value="9" onclick="appendvalue('/');">/</button>
+            <button class="number-button" value="9" onclick="calculate();">=</button>
+        </div>
+
+    </div>
+    <br>
+
+
+
+    <script>
+
+        function appendvalue(value) {
+            document.getElementById("display").value += value;
+        }
+        function cleardisplay() {
+            document.getElementById("display").value = "";
+        }
+        function calculate() {
+            try {
+                let result = eval(document.getElementById("display").value);
+                document.getElementById("display").value = result;
+            }
+            catch{
+                document.getElementById("display").value = "error";
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>

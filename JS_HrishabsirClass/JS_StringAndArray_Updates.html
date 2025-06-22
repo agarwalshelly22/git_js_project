@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <script>
+
+        //Updation - Array, String/Variable
+
+        //string Update - K sensitive
+        let txt = "hi hope you are fine";
+        console.log(txt.includes("hope"));
+        console.log(txt.startsWith("Hi"));
+        console.log(txt.endsWith("ine"));
+
+        //Array Update loop - using entries(), keys(), values()
+
+        let fruits = ["grapes", "lichi", "mango", "apple"];
+        let res = fruits.entries();
+        for (let all_ind_value of res) {
+            console.log(all_ind_value);
+        }
+        let res1 = fruits.keys();
+        for (let all_index of res1) {
+            console.log(all_index);
+        }
+        let res2 = fruits.values();
+        for (let all_value of res2) {
+            console.log(all_value);
+        }
+
+        // 2D Array
+
+        let fruits_2d = [["grapes", "lichi", "mango", "apple"], ["brinjal", "potato", "tomato"]];
+        let res_2d = fruits_2d.entries();
+        for (let all_ind_value of res_2d) {
+            console.log(all_ind_value);
+        }
+
+        // change string into Array
+        // let name = Array.from("AGRIM");
+        // console.log(name);
+
+        //Split  string into Array
+        let name_split = Array.from("AGRIM");
+        console.log(name_split);
+        const splitIndex = 3;
+        const part1 = name_split.slice(0, splitIndex);
+        const part2 = name_split.slice(splitIndex);
+        console.log(part1, part2);
+
+        // 2. Method
+        const first3 = [], last2 = [];
+        let name_split1 = Array.from("AGRIM");
+        for (let i = 0; i < 3; i++) {
+            first3.push(name_split1[i]);
+
+        }
+        console.log(first3);
+        for (let i = 3; i < name_split1.length; i++) {
+
+            last2.push(name_split1[i]);
+        }
+        console.log(last2);
+
+
+        // print above 18 number
+        // let arr1 = [15, 19, 90, 18, 25, 38];
+        // let rslt = [];
+        // for (let i = 0; i = arr1.length; i++) {
+        //        rslt=  arr1[i] > 18 ? rslt.push(arr1[i]):null;
+        //     // let rslt = arr1.filter(x => x > 18);
+        //      console.log(rslt);
+        // }
+
+
+
+        // ===================Object==================
+
+        let car = { name: "Honda", modal: 2025, color: "black" }
+        // document.getElementById("demo").innerHTML = car.name + car.model + car.color;
+        // document.getElementById("demo").innerHTML = Object.entries(car);
+        let result = "";
+
+        for (let [q, a] of Object.entries(car)) {
+            result += q + ":" + a + "<br>";
+        }
+        document.getElementById("demo").innerHTML = result;
+
+
+
+        let result1 = "";
+        let arr = [
+            { name: 'Hrishabh', age: 27 },
+            { location: "chandni chowwk", bike: "honda" }
+        ];
+        //   document.getElementById("demo1").innerHTML += arr[0].name+ arr[0].age+ arr[1].location +arr[1].bike+"<br>"
+        for (let i; i < arr.length; i++) {
+
+            // let obj = arr[i];
+            // for (let key of obj) {
+            //     result1 += `${key}: `
+            // }
+        }
+        document.getElementById("demo1").innerHTML = result1;
+
+    </script>
+</body>
+
+</html>

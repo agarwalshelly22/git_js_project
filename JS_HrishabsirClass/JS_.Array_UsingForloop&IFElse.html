@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<style>
+
+
+</style>
+
+
+
+<body>
+
+
+
+    <!-- ---------------------------22/April() For loop)-------------------------------------- -->
+
+    <p id="Multi_num"></p>
+    <p id="sum_num"></p>
+    <p id="break_cond"></p>
+    <p id="continue_cond"></p>
+
+    Insert your value<input type="number" id="insert_value" placeholder="Enter your number">
+    <p id="get_value"></p>
+    <button onclick="Get_func()">Save</button>
+
+
+    <p id="arr_demo"></p>
+    <p id="cube_root"></p>
+
+    <p id="even_arr"></p>
+    <p id="odd_arr"></p>
+
+    <p id="arr_dec"></p>
+    <p id="greater_value"></p>
+    <p id="count_name"></p>
+
+    <script>
+
+        // ---------------------------------22/April----------------------------------------------
+
+        function Get_func() {
+
+            const rslt = parseInt(document.getElementById("insert_value").value);
+
+            if (rslt > 0 && rslt <= 10) {
+                for (let i = 1; i <= 10; i++) {
+
+                    if (i == rslt) {
+                        document.getElementById("get_value").innerHTML += rslt + "-" + "This is the inserted value" + "<br>";
+                    }
+                    else {
+                        document.getElementById("get_value").innerHTML += i + "<br>";
+                    }
+                }
+            }
+            else {
+                document.getElementById("get_value").innerHTML = "Not a Valid Number"
+            }
+        }
+
+
+        for (let i = 0; i <= 10; i++) {
+            if (i == 5) {
+                break;  // 0,1,2,3,4 -output
+            }
+            document.getElementById("break_cond").innerHTML += i + "<br>";
+        }
+
+
+        for (i = 0; i <= 10; i++) {
+            if (i == 5) {     //output-  0,1,2,3,4,6,7,8,9,10
+                continue;
+            }
+            document.getElementById("continue_cond").innerHTML += i + "<br>";
+        }
+
+        // sum of Array
+
+        let sum = 0;
+        for (let i = 11; i <= 20; i++) {
+            sum += i;
+            // document.getElementById("sumEl").innerHTML += sum+ "<br>";
+        }
+        document.getElementById("sum_num").innerHTML += sum + "<br>";
+
+        // multi number 
+
+        for (let i = 1; i <= 10; i++) {
+            document.getElementById("Multi_num").innerHTML += i + "--" + i * i + "<br>";
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            height: 14vw;
+            align-content: center;
+        }
+
+        .left_cont {
+
+            background-color: blue;
+            height: 190px;
+            width: 226px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: solid 1px #000;
+
+        }
+
+        .right_cont {
+            background-color: green;
+            border: solid 1px #000;
+            height: 190px;
+            width: 226px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <!-- ---------------------------------------29/April (Generate Random number)---------------------------------------- -->
+
+
+    <!-- <h1>Team 1</h1>
+    <p id="random" class="left_cont">
+        <button onclick="rn()" style="height: 28px;width: 72px;">generate</button>
+    </p>
+
+    <h1>Team 2</h1>
+    <p id="random2" class="right_cont">
+        <button onclick="rn2()" style="height: 28px;width: 72px;">generate</button>
+
+
+    <p id="random_sum"></p>
+    <button onclick="rn_sum()" style="height: 28px;width: 72px;">generate</button>
+ -->
+
+
+    <div class="container">
+        <div id="random" class="left_cont">
+            <button onclick="rn()" style="height: 35px;">Random number A</button>
+            <!-- </p> -->
+        </div>
+        <div id="random2" class="right_cont">
+
+            <button onclick="rn2()" style="height: 35px;">Random number B</button>
+        </div>
+    </div>
+
+    <div id="random_sum" style="justify-content: center; display: flex;">
+        <button onclick="rn_sum()" style="height: 28px;">greater number</button>
+    </div>
+
+
+
+    <script>
+
+
+
+        // --------------------------------29/April----------------------------------------------------
+
+        let rdm_num;
+        let rdm_num2;
+        let rdm_sum;
+
+        function rn() {
+            rdm_num = Math.round(10 + Math.random() * 89);
+            document.getElementById("random").innerHTML = rdm_num;
+        }
+
+        function rn2() {
+            rdm_num2 = Math.round(10 + Math.random() * 89);
+            document.getElementById("random2").innerHTML = rdm_num2;
+        }
+
+        function rn_sum() {
+            if (rdm_num > rdm_num2) {
+                document.getElementById("random_sum").innerHTML = rdm_num;
+            }
+            else {
+                document.getElementById("random_sum").innerHTML = rdm_num2;
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>

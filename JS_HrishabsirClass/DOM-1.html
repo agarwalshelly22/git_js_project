@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<div>>, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            height: 200px;
+            width: 200px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- mouseout - 
+  mousedown- 
+  mouseover- -->
+
+    <div id="demo" class="box" onmouseover="function1(this)" onmouseout="function2(this)"></div>
+
+</body>
+<script>
+    function function1(a) {
+        a.style.backgroundColor = "red";
+        document.getElementById("demo").innerHTML = "hi this is Alert";
+        a.style.transition = "2s";
+    }
+
+    function function2(b) {
+        b.style.backgroundColor = "blue";
+        document.getElementById("demo").innerHTML = "hi this is normal";
+       
+    }
+</script>
+
+</html>

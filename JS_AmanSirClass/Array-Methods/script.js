@@ -113,11 +113,11 @@ const displayMovements = function (movements, sort = false) {
 
 //------sort---------
 console.log("=======Sort==========");
-let sorted=false;
+let sorted = false;
 btnSort.addEventListener("click", function (e) {
-e.preventDefault();
-displayMovements(currentAccount.movements , !sorted)
-sorted= !sorted
+  e.preventDefault();
+  displayMovements(currentAccount.movements, !sorted);
+  sorted = !sorted;
 });
 
 console.log("========Calculate Balance(right)========");
@@ -211,8 +211,6 @@ btnTransfer.addEventListener("click", function (e) {
     CalcDisplaySummary(currentAccount);
   }
 });
-
-
 
 //*******Tutorial*********
 

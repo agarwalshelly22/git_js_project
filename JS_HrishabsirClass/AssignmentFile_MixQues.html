@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .toggler~ul.lights>li {
+        animation-play-state: running;
+    }
+
+
+    :root {
+        --red: #dd1e10;
+        --red-dark: #dd1e1033;
+        --amber: #f7b500;
+        --amber-dark: #f7b50033;
+        --green: #33a532;
+        --green-dark: #33a53233;
+        --speed: 5s;
+        --opacity-off: 0.35;
+        --shadow-spread: 0px;
+    }
+
+    body {
+        margin: 50px;
+        height: 100vh;
+
+    }
+
+    ul,
+    li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    ul.lights {
+
+        background: black;
+        margin: 20px auto 0 auto;
+        padding: 40px 30px;
+        width: fit-content;
+        border-radius: 45px;
+
+    }
+
+    ul.lights>li {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        border: 10px solid rgba(255, 255, 255, 0);
+        animation-name: fade;
+        animation-duration: calc(var(--speed) * 3);
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        opacity: var(--opacity-off);
+        animation-play-state: paused;
+    }
+
+
+    @keyframes fade {
+
+        0%,
+        50%,
+        66.6%,
+        83.3%,
+        100% {
+            opacity: var(--opacity-off);
+
+        }
+
+        16.6%,
+        33% {
+            opacity: 1;
+        }
+    }
+
+    ul.lights>li:not(:last-child) {
+        margin-bottom: 30px;
+    }
+
+    ul.lights>li.red {
+        background-color: var(--red);
+    }
+
+    ul.lights>li.amber {
+        background-color: var(--amber);
+        animation-delay: calc(var(--speed) * 1);
+    }
+
+    ul.lights>li.green {
+        background-color: var(--green);
+        animation-delay: calc(var(--speed) * 2);
+    }
+
+    .container_box {
+        display: flex;
+        justify-content: center;
+        height: 14vw;
+        align-content: center;
+    }
+
+    .left_cont {
+
+        background-color: blue;
+        height: 190px;
+        width: 226px;
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        border: solid 1px #000;
+
+    }
+
+    .right_cont {
+        background-color: green;
+        border: solid 1px #000;
+        height: 190px;
+        width: 226px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .otp-box {
+        /* display: flex; */
+        height: 30px;
+        width: 30px;
+        text-align: center;
+        background-color: white;
+        font-size: 16px;
+        border: 50%;
+        margin-top: 7px;
+    }
+
+    p {
+        text-align: center;
+        margin-top: 7px;
+    }
+
+    /* .otp-boxes {
+        display: flex;
+        gap: 10px
+    } */
+</style>
+
+<body>
+    <!-- ---------------1. traffic light--------------------------------- -->
+    <main>
+        <div class="toggler"></div>
+        <ul class="lights">
+            <li class="red"></li>
+            <li class="amber"></li>
+            <li class="green"></li>
+        </ul>
+    </main>
+
+    <br>
+    <!-- -------------------------Prime numers------------------------------------------------- -->
+
+    <p id="Isprime"></p>
+    <br>
+    <!-- ------------------------------Leap Year-------------------------------------------------------- -->
+
+
+    <input type="number" placeholder="Enter year number" id="Year_input">
+    <p id="IsLeap"></p>
+    <button onclick="IsLeap_year()">Check Leap Year</button>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!-- ------------------Random number-------------------------------------- -->
+    <div class="container_box">
+        <div id="random" class="left_cont">
+            <div class="otp-box">
+                <p id="d1"></p>
+            </div>
+            <div class="otp-box">
+                <p id="d2"></p>
+            </div>
+            <div class="otp-box">
+                <p id="d3"></p>
+            </div>
+            <div class="otp-box">
+                <p id="d4"></p>
+            </div>
+            <br>
+            <br>
+            <button onclick="rn()" style="height: 35px;">Random number A</button>
+        </div>
+
+
+        <div id="random2" class="right_cont">
+            <div class="otp-box">
+                <p id="dL1"></p>
+            </div>
+            <div class="otp-box">
+                <p id="dL2"></p>
+            </div>
+            <div class="otp-box">
+                <p id="dL3"></p>
+            </div>
+            <div class="otp-box">
+                <p id="dL4"></p>
+            </div>
+            <button onclick="rn2()" style="height: 35px;">Random number B</button>
+        </div>
+    </div>
+
+
+    <div id="random_sum" style="justify-content: center; display: flex;">
+        <button onclick="rn_sum()" style="height: 28px;">greater number</button>
+    </div>
+
+
+
+
+    <script>
+
+        // <!-- -------------------------2. Prime numers------------------------------------------------- -->
+
+
+        const num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+
+
+        function isPrime(n) {
+
+            if (n <= 1) {
+                return false;
+            }
+            for (let i = 2; i <= Math.sqrt(n); i++) {
+                if (n % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        for (let i = 0; i < num.length; i++) {
+            const number = num[i];
+            if (isPrime(number)) {
+                document.getElementById("Isprime").innerHTML += number + " " + "is a Prime Value" + "<br>";
+            } else {
+                document.getElementById("Isprime").innerHTML += number + " " + "is not a Prime Value" + "<br>";
+            }
+        }
+
+        // -------------------------------------3. Leap year-------------------------------------
+
+
+
+        function IsLeap_year() {
+            const year = Number(document.getElementById("Year_input").value);
+
+            if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+                document.getElementById("IsLeap").innerHTML = "Leap Year";
+            } else {
+                document.getElementById("IsLeap").innerHTML = "Not Leap Year";
+            }
+        }
+
+        // -------------------------------------4. Random Number-------------------------------------------------
+
+        let rdm_num;
+        let rdm_num2;
+
+        function rn() {
+
+            rdm_num = Math.floor(1000 + Math.random() * 8999).toString();
+            document.getElementById("d1").innerHTML = rdm_num[0];
+            document.getElementById("d2").innerHTML = rdm_num[1];
+            document.getElementById("d3").innerHTML = rdm_num[2];
+            document.getElementById("d4").innerHTML = rdm_num[3];
+        }
+
+        function rn2() {
+            rdm_num2 = Math.floor(1000 + Math.random() * 8999).toString();
+            document.getElementById("dL1").innerHTML = rdm_num2[0];
+            document.getElementById("dL2").innerHTML = rdm_num2[1];
+            document.getElementById("dL3").innerHTML = rdm_num2[2];
+            document.getElementById("dL4").innerHTML = rdm_num2[3];
+        }
+
+        function rn_sum() {
+
+            let rdm1_sumOfDigits = 0;
+            let rdm2_sumOfDigits = 0;
+
+            for (let i = 0; i < rdm_num.length; i++) {
+                rdm1_sumOfDigits += Number(rdm_num[i]);
+            }
+            for (let i = 0; i < rdm_num2.length; i++) {
+                rdm2_sumOfDigits += Number(rdm_num2[i]);
+            }
+
+            if (rdm1_sumOfDigits > rdm2_sumOfDigits) {
+
+                document.getElementById("random_sum").innerHTML = rdm1_sumOfDigits + " is greater than " + rdm2_sumOfDigits + " OTP is varified";
+            }
+            else {
+                document.getElementById("random_sum").innerHTML = rdm1_sumOfDigits + " is less than " + rdm2_sumOfDigits + " OTP is not verified";
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

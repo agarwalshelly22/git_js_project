@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .otp-box {
+            /* display: flex; */
+            height: 50px;
+            width: 50px;
+            text-align: center;
+            background-color: pink;
+            font-size: 16px;
+            border: 50%;
+            border-radius: 50px;
+            /* padding: 5px; */
+            /* margin-bottom: 10px; */
+        }
+
+        .otp-boxes {
+            display: flex;
+            gap: 10px
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    
+    <!-- ---------------------------------2/June (generate OTP by Random num)--------------------------------------- -->
+
+
+    <div class="otp-boxes">
+        <div class="otp-box">
+            <p id="d1"></p>
+        </div>
+        <div class="otp-box">
+            <p id="d2"></p>
+        </div>
+        <div class="otp-box">
+            <p id="d3"></p>
+        </div>
+        <div class="otp-box">
+            <p id="d4"></p>
+        </div>
+    </div>
+    <br>
+    <button onclick="generate_otp()">Generate OTP</button>
+
+
+    <script>
+
+        function generate_otp() {
+            debugger
+            let otp = Math.floor(1000 + Math.random() * 8999).toString();
+            document.getElementById("d1").innerHTML = otp[0];
+            document.getElementById("d2").innerHTML = otp[1];
+            document.getElementById("d3").innerHTML = otp[2];
+            document.getElementById("d4").innerHTML = otp[3];
+        }
+
+
+    </script>
+
+</body>
+
+</html>

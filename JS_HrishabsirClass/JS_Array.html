@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<style>
+
+
+
+</style>
+
+<body>
+
+    <p id="arr_name"></p>
+    <p id="arr_list"></p>
+    <p id="arr_join"></p>
+    <p id="check"></p>
+
+    <p id="arr_dec"></p>
+    <p id="greater_value"></p>
+    <p id="count_name"></p>
+
+    <p id="arr1_demo"></p>
+    <p id="cube_root"></p>
+
+    <p id="even_arr"></p>
+    <p id="odd_arr"></p>
+
+
+    <script>
+
+
+        let name = ["Shelly", "amisha", "agrim", 90];
+
+        name[1] = "Amisha Sharma";
+        // document.getElementById("arr_name").innerHTML = name;  // update name using Array
+        for (i = 0; i < name.length; i++) {
+
+            document.getElementById("arr_list").innerHTML += name[i] + "<br>";     // All output in a list uisng break
+
+            // document.getElementById("arr_list").innerHTML = name[i] + "<br>";   // last value result only
+        }
+
+
+
+        // using join() function in Array
+
+        let res = name.join("_");
+        document.getElementById("arr_join").innerHTML += res;       // join() in Array
+
+        //Using Array Using string 
+        let nme = "shelly";
+        document.getElementById("check").innerHTML = nme[3];   // single value Array in string
+
+        // ---------------------------Assignment---------------------------------------------
+
+        // 1# print (n-1) in array
+
+        let arr_numb = [10, 20, 30, 40];
+        for (let i = 0; i < arr_numb.length; i++) {
+            const temp_arr = arr_numb[i] - 1
+            document.getElementById("arr_dec").innerHTML += arr_numb[i] + "-1" + " = " + temp_arr + "<br>";
+        }
+
+
+        // 2#  Print greater than 25
+
+        for (let i = 25; i <= 30; i++) {
+            document.getElementById("greater_value").innerHTML += [i] + "<br>";
+        }
+
+        // 3#   Count names
+
+        let count = [2, 3, 4, 5]
+        let name_arr = ["shelly", "Amisha", "Shivam", "Agrim"];
+        let result = "";
+
+        for (let i = 0; i < count.length; i++) {
+
+            for (let j = 0; j < name_arr.length; j++) {
+
+                result += name_arr[j]
+                document.getElementById("count_name").innerHTML += i + result + "<br>"
+
+            }
+        }
+
+
+
+        let data = [
+            [2, 'shelly'],
+            [3, 'Amisha']
+        ];
+
+        for (let i = 0; i < data.length; i++) {
+            let count = data[i][0];
+            let name = data[i][1];
+            let result = '';
+    
+            for (let j = 0; j < count; j++) {
+                result += name;
+                if (j < count - 1) {
+                    result += ', ';
+                }
+            }
+
+            console.log(result);  // Output each name repeated in a single line
+        }
+
+
+        // <!-- -----------------------------28/Aril--(Array)----------------------------------- -->
+
+
+        let arr_num = [40, 20, 33, 40, 50, 77, 88]
+
+        for (let i = 0; i < arr_num.length; i++) {
+
+            arr_num[i] = arr_num[i] * arr_num[i] * arr_num[i];
+            document.getElementById("cube_root").innerHTML += i + "__" + "Cube root" + "---" + arr_num[i] + "<br>";
+
+        }
+
+        let arr1 = [40, 20, 33, 40, 50, 77, 88]
+
+        for (let i = 0; i < arr1.length; i++) {
+
+            if (arr1[i] % 2 == 0) {
+                document.getElementById("arr1_demo").innerHTML += "Even" + "_" + arr1[i] + "<br>";
+            }
+            else {
+                document.getElementById("arr1_demo").innerHTML += "Odd" + "_" + arr1[i] + "<br>";
+
+            }
+        }
+
+
+
+        // working
+
+        let even_arr1 = 0;
+        let odd_arr1 = 0;
+
+        let arr = [10, 33, 55, 40, 50];
+        for (let i = 0; i < arr.length; i++) {
+
+            if (arr[i] % 2 == 0) {
+                even_arr1 += arr[i]  // 0,1,2,3,4 -output
+                document.getElementById("even_arr").innerHTML = even_arr1 + "<br>";
+            }
+            else {
+                odd_arr1 += arr[i]
+                document.getElementById("odd_arr").innerHTML = odd_arr1 + "<br>";
+            }
+
+
+        }
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

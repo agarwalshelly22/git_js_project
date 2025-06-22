@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
+
+    <title>11 March Assignment</title>
+</head>
+<style>
+    * {
+        padding: 0px;
+        margin: 0px;
+
+    }
+
+    body {
+        background-color: #000000e8;
+        padding-inline: 30px;
+        padding: 10px;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        height: 55px;
+    }
+
+    .box1 {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .box2 {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .box3 {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+    }
+
+    header {
+        height: 60px;
+        /* background-color: pink; */
+    }
+
+    .micro {
+        /* background: #ff03030a; */
+        border-radius: 20px;
+        background-color: #80808085;
+        height: 40px;
+        width: 40px;
+        border: none;
+    }
+
+    .micro:hover {
+        background-color: #808080ad
+    }
+
+    input {
+        width: 464px;
+        background-color: rgb(36, 35, 35);
+        padding: 5px;
+        /* color: white; */
+        margin-left: 20px;
+        height: 22px;
+    }
+
+    .searchbarIcon {
+        background: rgb(35 36 36);
+        border: none;
+        /* height: 42px; */
+        width: 60px;
+        border-radius: 30px;
+    }
+
+    .searchbarInput {
+        display: flex;
+        border-radius: 40px;
+        border: 1px solid white;
+        background-color: rgb(36, 35, 35);
+    }
+
+    .parentdiv {
+        /* height: 81vh; */
+        /* background-color: pink; */
+        /* width: 900px; */
+        display: flex;
+        width: 98.2vw;
+        scrollbar-color: #808080b5 #000000;
+        /* change */
+        /* height: 99vh; */
+    }
+
+    .Left_Containerbox {
+        /* height: 100%; */
+        background-color: #80808021;
+        width: 16%;
+        overflow: auto;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        height: 99vh;
+        /* padding-inline: 8px; */
+    }
+
+    .Left_Containerbox:hover {
+        overflow-y: auto;
+        scrollbar-color: #808080b5 #000000;
+        scrollbar-width: thin;
+    }
+
+    .Left_Containerbox:active {
+        scrollbar-width: thin;
+        scrollbar-color: #808080b5 #000000;
+    }
+
+    .LeftImgIcon {
+        display: flex;
+        gap: 23px;
+        padding: 7px;
+
+        /* //changeee */
+
+        margin-left: 10px;
+    }
+
+    .LeftImgIcon:hover {
+        background-color: rgb(68, 67, 67);
+        border-radius: 20px;
+        width: 220px;
+        /* margin-top: 15px; */
+        /* height: 30px; */
+    }
+
+    .LeftImgIcon:active {
+        background-color: rgb(128, 128, 128);
+        /* margin-top: 10px; */
+    }
+
+    /* .LImgIcon2 {
+        margin-top: 10px;
+        margin-bottom: 5px;
+        gap: 24px;
+    } */
+
+    /* .Right_box {
+        height: 100%;
+        background-color: grey;
+        width: 83%;
+    } */
+
+    .Right_ContainerBox {
+        /* background-color: blueviolet;
+        width: 80%;
+        padding-inline: 23px;
+        display: grid;
+        column-gap: 20px;
+        
+        grid-template-columns: auto auto auto;
+        justify-content: space-between;
+        padding-top: 20px;
+        overflow: hidden;
+        height: 100%;
+        background-color: blueviolet; */
+        width: 81%;
+        padding-inline: 25px;
+        display: grid;
+        /* row-gap: 30px; */
+        row-gap: 120px;
+        grid-template-columns: 25.8vw 25.8vw 25.8vw;
+        /* grid-template-columns: 1fr 1fr 1fr; */
+        /* background-color: aqua; */
+        /* grid-template-rows: 325px 325px 325px; */
+        /* grid-template-rows: 325px repeat(auto-fill, 325px) 325px; */
+        justify-content: space-between;
+        padding-top: 20px;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+
+    /* .RContainer_Info {
+        /* width: 32%; */
+        /* background-color: pink;
+
+        display: flex;
+        flex-direction: column;
+
+    }  */
+
+    .RContainer_Description {
+        /* display: flex; */
+        /* height: 36px; */
+        margin-top: 12px;
+        cursor: pointer;
+    }
+
+    .R_Btm_Desp {
+        display: flex;
+    }
+
+    .Right_breif {
+
+        width: 300px;
+        margin-left: 12px;
+        font-size: 16px;
+        color: white;
+    }
+
+    .Rtitle {
+
+        font-family: "Arial", "Roboto", sans-serif;
+        /* font-size: 16px; */
+        font-weight: 500;
+    }
+
+    .Rt {
+        color: #808080;
+    }
+
+    .Title_span {
+        display: flex;
+        gap: 10px;
+        margin-top: 6px;
+        margin-bottom: 2px;
+        /* color: #0000001a; */
+    }
+
+    .Title_span:hover {
+        color: #808080b8;
+    }
+
+    .frame {
+        width: 100%;
+        /* height: 275px; */
+        height: 100%;
+        border-radius: 25px;
+        cursor: pointer;
+    }
+
+    .frame:hover {
+        border: none;
+
+    }
+
+    .frame:active {
+        border: none;
+    }
+
+    .frame:active {
+        border: none;
+    }
+
+
+    .leftLabels {
+        color: white;
+        background-color: transparent;
+        border: none;
+        font-size: 14px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .LblYou {
+        margin-top: 20px;
+        font-size: 16px;
+        font-weight: bold;
+        display: flex;
+    }
+
+    .horizon {
+        margin-top: 15px;
+        margin-left: 8px;
+        width: 218px
+    }
+</style>
+
+<body>
+    <!-- <div> -->
+    <header>
+        <nav>
+            <div class="box1">
+                <img src="./Image/threeLines.svg" style="height:54px; margin-left: 15px;">
+                <img height="70px" width="170px" src="./Image/logos.webp" alt="">
+            </div>
+
+
+            <div class="box2">
+                <div class="searchbarInput">
+                    <input type="text" title="Search" placeholder="Search">
+                    <button class="searchbarIcon"><img src="./Image/Search.svg" height="25px" width="30px"></button>
+                </div>
+
+                <button class="micro"> <img src="./Image/microphone.svg" height="20px" width="20px"></button>
+
+            </div>
+
+            <div class="box3">
+                <img src="./Image/notification.svg" height="20px" width="20px">
+                <img style="margin-right: 12px; margin-left: 20px;" src="./Image/profile.svg" height="30px"
+                    width="30px;">
+
+            </div>
+        </nav>
+    </header>
+
+    <div class="parentdiv">
+        <div class="Left_Containerbox">
+            <div class="LeftImgIcon"><img src="./Image/home.svg" height="25px" width="25px;" style="margin-top: 10px; ">
+                <button class="leftLabels" style="margin-top: 10px;">Home</button>
+            </div>
+
+            <div class="LeftImgIcon"><img src="./Image/shorts.svg" height="25px" width="25px;"> <button
+                    class="leftLabels">Shorts
+
+                </button></div>
+
+            <div class="LeftImgIcon"><img style="margin-top: -1px;" src="./Image/subscription.svg" height="25px"
+                    width="25px;">
+                <button style="margin-top: -1px;" class="leftLabels">Subscription</button>
+            </div>
+
+            <hr size="1" class="horizon">
+
+            <div class="LeftImgIcon">
+                <button class="leftLabels LblYou"> You <span style="margin-left: 10px;"> <img
+                            src="./Image/You_arrow.svg"></span> </button>
+            </div>
+
+            <div class="LeftImgIcon LImgIcon2"><img src="./Image/history.svg" height="25px" width="25px">
+                <button class="leftLabels">History</button>
+            </div>
+            <div class="LeftImgIcon LImgIcon2"><img src="./Image/Platlis.svg" height="25px" width="25px">
+                <button class="leftLabels">Playlists</button>
+            </div>
+            <div class="LeftImgIcon LImgIcon2"><img src="./Image/yourvdo.svg" height="25px" width="25px">
+                <button class="leftLabels">Your videos</button>
+            </div>
+            <div class="LeftImgIcon LImgIcon2"><img src="./Image/watchlater.svg" height="25px" width="25px">
+                <button class="leftLabels">Watch later</button>
+            </div>
+            <div class="LeftImgIcon LImgIcon2"><img src="./Image/Likedvdo.svg" height="25px" width="25px">
+                <button class="leftLabels">Liked videos</button>
+            </div>
+            <hr size="1" class="horizon">
+
+
+            <div class="LeftImgIcon">
+                <button class="leftLabels LblYou"> Explore</button>
+            </div>
+
+            <div class="LeftImgIcon LImgIcon2"><img src="./Image/trending.svg" height="25px" width="25px">
+                <button class="leftLabels">Trending</button>
+            </div>
+            <div class="LeftImgIcon LImgIcon2"><img src="./Image/shopping.svg" height="25px" width="25px">
+                <button class="leftLabels">Shopping</button>
+            </div>
+            <div class="LeftImgIcon LImgIcon2"><img src="./Image/movies.svg" height="25px" width="25px">
+                <button class="leftLabels">Music</button>
+            </div>
+            <div class="LeftImgIcon LImgIcon2"><img src="./Image/movie1.svg" height="25px" width="25px">
+                <button class="leftLabels">Movies & TV</button>
+            </div>
+            <div class="LeftImgIcon LImgIcon2"><img src="./Image/live.svg" height="25px" width="25px">
+                <button class="leftLabels">Live</button>
+            </div>
+            <div class="LeftImgIcon LImgIcon2"><img src="./Image/history.svg" height="25px" width="25px">
+                <button class="leftLabels">Gaming</button>
+            </div>
+            <div class="LeftImgIcon LImgIcon2"><img src="./Image/yourvdo.svg" height="25px" width="25px">
+                <button class="leftLabels">News</button>
+            </div>
+            <div class="LeftImgIcon LImgIcon2"><img src="./Image/shorts.svg" height="25px" width="25px">
+                <button class="leftLabels">Sports</button>
+            </div>
+            <div class="LeftImgIcon LImgIcon2"><img src="./Image/Likedvdo.svg" height="25px" width="25px">
+                <button class="leftLabels">Courses</button>
+            </div>
+            <div class="LeftImgIcon LImgIcon2"><img src="./Image/watchlater.svg" height="25px" width="25px">
+                <button class="leftLabels">Fashion & beauty</button>
+            </div>
+            <div class="LeftImgIcon LImgIcon2"><img src="./Image/shopping.svg" height="25px" width="25px">
+                <button class="leftLabels">Podcasts</button>
+            </div>
+            <div class="LeftImgIcon LImgIcon2"><img src="./Image/history.svg" height="25px" width="25px">
+                <button class="leftLabels">Playables</button>
+            </div>
+
+        </div> <!--   left div close -->
+
+        <div class="Right_ContainerBox">
+
+            <div class="RContainer_Info">
+                <iframe class="frame" src="https://www.youtube.com/embed/HuFYqnbVbzY?si=iXjXq_zTYcSNqIMO"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                <div class="RContainer_Description R_Btm_Desp">
+                    <div class="Right_Img">
+                        <img id="img" style="background-color: transparent;" height="30" width="30" draggable="false"
+                            class="style-scope yt-img-shadow" alt="" width="48"
+                            src="https://yt3.ggpht.com/AbrJtggLGqN7VvqS5Ucdr8dfMgr67Ov2L8NRR_mRf57wksOlnBdiOZCno_ZXUbuev-iaT_dZIWw=s68-c-k-c0x00ffffff-no-rj">
+
+                    </div>
+
+                    <div class="Right_breif">
+                        <h4 class="Rtitle ">☕Cozy Jazz Music with Bookstore Cafe Ambience </h4>
+                        <div class="Title_span Rt"><span>Jazz Cafe Ambience</span><img height="15" width="15"
+                                src="./Image/Mark.svg"></div>
+                        <span class="Rt">368M Watching • 1 month ago</span>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="RContainer_Info">
+                <iframe class="frame" src="https://www.youtube.com/embed/dXIyMS61B68?si=GAp94z4H0Osr5lWA"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                <div class="RContainer_Description R_Btm_Desp">
+                    <div class="Right_Img">
+                        <img id="img" style="background-color: transparent;" height="30" width="30" draggable="false"
+                            class="style-scope yt-img-shadow" alt="" width="48"
+                            src="https://yt3.ggpht.com/AbrJtggLGqN7VvqS5Ucdr8dfMgr67Ov2L8NRR_mRf57wksOlnBdiOZCno_ZXUbuev-iaT_dZIWw=s68-c-k-c0x00ffffff-no-rj">
+
+                    </div>
+
+                    <div class="Right_breif">
+                        <h4 class="Rtitle">☕Cozy Jazz Music with Bookstore Cafe Ambience </h4>
+                        <div class="Title_span Rt"><span>Jazz Cafe Ambience</span><img height="15" width="15"
+                                src="./Image/Mark.svg"></div>
+                        <span class="Rt"> 368M Watching • 1 month ago</span>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="RContainer_Info"><iframe class="frame"
+                    src="https://www.youtube.com/embed/HXpdF2qyVLQ?si=vTMyhVYfcJSe9aqT" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="RContainer_Description R_Btm_Desp">
+                    <div class="Right_Img">
+                        <img id="img" style="background-color: transparent;" height="30" width="30" draggable="false"
+                            class="style-scope yt-img-shadow" alt="" width="48"
+                            src="https://yt3.ggpht.com/AbrJtggLGqN7VvqS5Ucdr8dfMgr67Ov2L8NRR_mRf57wksOlnBdiOZCno_ZXUbuev-iaT_dZIWw=s68-c-k-c0x00ffffff-no-rj">
+
+                    </div>
+                    <div class="Right_breif">
+                        <h4 class="Rtitle">☕Cozy Jazz Music with Bookstore Cafe Ambience </h4>
+                        <div class="Title_span Rt"><span>Jazz Cafe Ambience</span><img height="15" width="15"
+                                src="./Image/Mark.svg"></div>
+                        <span class="Rt"> 368M Watching • 1 month ago</span>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="RContainer_Info">
+                <iframe class="frame" src="https://www.youtube.com/embed/If_UO5D9SdU?si=4hPiMbcZJOCQ7VmX"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="RContainer_Description R_Btm_Desp">
+                    <div class="Right_Img">
+                        <img id="img" style="background-color: transparent;" height="30" width="30" draggable="false"
+                            class="style-scope yt-img-shadow" alt="" width="48"
+                            src="https://yt3.ggpht.com/AbrJtggLGqN7VvqS5Ucdr8dfMgr67Ov2L8NRR_mRf57wksOlnBdiOZCno_ZXUbuev-iaT_dZIWw=s68-c-k-c0x00ffffff-no-rj">
+
+                    </div>
+
+                    <div class="Right_breif">
+                        <h4 class="Rtitle">A Peaceful Place 🍃 Chill Morning Lofi 🍃</h4>
+                        <div class="Title_span Rt"><span>Lofi Everyday</span><img height="15" width="15"
+                                src="./Image/Mark.svg"></div>
+                        <span class="Rt"> 856 Watching • 5 month ago</span>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="RContainer_Info">
+                <iframe class="frame" src="https://www.youtube.com/embed/2Jd5XGpgScA?si=2tNS5ErgiTVwDC1Y"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="RContainer_Description R_Btm_Desp">
+                    <div class="Right_Img">
+                        <img id="img" style="background-color: transparent;" height="30" width="30" draggable="false"
+                            class="style-scope yt-img-shadow" alt="" width="48"
+                            src="https://yt3.ggpht.com/AbrJtggLGqN7VvqS5Ucdr8dfMgr67Ov2L8NRR_mRf57wksOlnBdiOZCno_ZXUbuev-iaT_dZIWw=s68-c-k-c0x00ffffff-no-rj">
+
+                    </div>
+
+                    <div class="Right_breif">
+                        <h4 class="Rtitle">☕Cozy Jazz Music with Bookstore Cafe Ambience </h4>
+                        <div class="Title_span Rt"><span>Jazz Cafe Ambience</span><img height="15" width="15"
+                                src="./Image/Mark.svg"></div>
+                        <span class="Rt"> 368M Watching • 1 month ago</span>
+
+                    </div>
+                </div>
+            </div>
+            <div class="RContainer_Info"><iframe class="frame"
+                    src="https://www.youtube.com/embed/H94ntp93SGY?si=MMzxJQTiYK2kdXsm" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="RContainer_Description R_Btm_Desp">
+                    <div class="Right_Img">
+                        <img id="img" style="background-color: transparent;" height="30" width="30" draggable="false"
+                            class="style-scope yt-img-shadow" alt="" width="48"
+                            src="https://yt3.ggpht.com/AbrJtggLGqN7VvqS5Ucdr8dfMgr67Ov2L8NRR_mRf57wksOlnBdiOZCno_ZXUbuev-iaT_dZIWw=s68-c-k-c0x00ffffff-no-rj">
+
+                    </div>
+
+                    <div class="Right_breif">
+                        <h4 class="Rtitle">☕Cozy Jazz Music with Bookstore Cafe Ambience </h4>
+                        <div class="Title_span Rt"><span>Jazz Cafe Ambience</span><img height="15" width="15"
+                                src="./Image/Mark.svg"></div>
+                        <span class="Rt"> 137k Watching • 1 month ago</span>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="RContainer_Info"><iframe class="frame"
+                    src="https://www.youtube.com/embed/H94ntp93SGY?si=MMzxJQTiYK2kdXsm" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="RContainer_Description R_Btm_Desp">
+                    <div class="Right_Img">
+                        <img id="img" style="background-color: transparent;" height="30" width="30" draggable="false"
+                            class="style-scope yt-img-shadow" alt="" width="48"
+                            src="https://yt3.ggpht.com/AbrJtggLGqN7VvqS5Ucdr8dfMgr67Ov2L8NRR_mRf57wksOlnBdiOZCno_ZXUbuev-iaT_dZIWw=s68-c-k-c0x00ffffff-no-rj">
+
+                    </div>
+
+                    <div class="Right_breif">
+                        <h4 class="Rtitle">☕Cozy Jazz Music with Bookstore Cafe Ambience </h4>
+                        <div class="Title_span Rt"><span>Jazz Cafe Ambience</span><img height="15" width="15"
+                                src="./Image/Mark.svg"></div>
+                        <span class="Rt"> 137k Watching • 1 month ago</span>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="RContainer_Info"><iframe class="frame"
+                    src="https://www.youtube.com/embed/HXpdF2qyVLQ?si=vTMyhVYfcJSe9aqT" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="RContainer_Description R_Btm_Desp">
+                    <div class="Right_Img">
+                        <img id="img" style="background-color: transparent;" height="30" width="30" draggable="false"
+                            class="style-scope yt-img-shadow" alt="" width="48"
+                            src="https://yt3.ggpht.com/AbrJtggLGqN7VvqS5Ucdr8dfMgr67Ov2L8NRR_mRf57wksOlnBdiOZCno_ZXUbuev-iaT_dZIWw=s68-c-k-c0x00ffffff-no-rj">
+
+                    </div>
+
+                    <div class="Right_breif">
+                        <h4 class="Rtitle">☕Cozy Jazz Music with Bookstore Cafe Ambience </h4>
+                        <div class="Title_span Rt"><span>Jazz Cafe Ambience</span><img height="15" width="15"
+                                src="./Image/Mark.svg"></div>
+                        <span class="Rt"> 368M Watching • 1 month ago</span>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="RContainer_Info">
+                <iframe class="frame" src="https://www.youtube.com/embed/If_UO5D9SdU?si=4hPiMbcZJOCQ7VmX"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="RContainer_Description R_Btm_Desp">
+                    <div class="Right_Img">
+                        <img id="img" style="background-color: transparent;" height="30" width="30" draggable="false"
+                            class="style-scope yt-img-shadow" alt="" width="48"
+                            src="https://yt3.ggpht.com/AbrJtggLGqN7VvqS5Ucdr8dfMgr67Ov2L8NRR_mRf57wksOlnBdiOZCno_ZXUbuev-iaT_dZIWw=s68-c-k-c0x00ffffff-no-rj">
+
+                    </div>
+
+                    <div class="Right_breif">
+                        <h4 class="Rtitle">A Peaceful Place 🍃 Chill Morning Lofi 🍃</h4>
+                        <div class="Title_span Rt"><span>Lofi Everyday</span><img height="15" width="15"
+                                src="./Image/Mark.svg"></div>
+                        <span class="Rt"> 856 Watching • 5 month ago</span>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="RContainer_Info">
+                <iframe class="frame" src="https://www.youtube.com/embed/If_UO5D9SdU?si=4hPiMbcZJOCQ7VmX"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="RContainer_Description R_Btm_Desp">
+                    <div class="Right_Img">
+                        <img id="img" style="background-color: transparent;" height="30" width="30" draggable="false"
+                            class="style-scope yt-img-shadow" alt="" width="48"
+                            src="https://yt3.ggpht.com/AbrJtggLGqN7VvqS5Ucdr8dfMgr67Ov2L8NRR_mRf57wksOlnBdiOZCno_ZXUbuev-iaT_dZIWw=s68-c-k-c0x00ffffff-no-rj">
+
+                    </div>
+
+                    <div class="Right_breif">
+                        <h4 class="Rtitle">A Peaceful Place 🍃 Chill Morning Lofi 🍃</h4>
+                        <div class="Title_span Rt"><span>Lofi Everyday</span><img height="15" width="15"
+                                src="./Image/Mark.svg"></div>
+                        <span class="Rt"> 856 Watching • 5 month ago</span>
+
+                    </div>
+                </div>
+            </div>
+            <div class="RContainer_Info">
+                <iframe class="frame" src="https://www.youtube.com/embed/If_UO5D9SdU?si=4hPiMbcZJOCQ7VmX"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="RContainer_Description R_Btm_Desp">
+                    <div class="Right_Img">
+                        <img id="img" style="background-color: transparent;" height="30" width="30" draggable="false"
+                            class="style-scope yt-img-shadow" alt="" width="48"
+                            src="https://yt3.ggpht.com/AbrJtggLGqN7VvqS5Ucdr8dfMgr67Ov2L8NRR_mRf57wksOlnBdiOZCno_ZXUbuev-iaT_dZIWw=s68-c-k-c0x00ffffff-no-rj">
+
+                    </div>
+
+                    <div class="Right_breif">
+                        <h4 class="Rtitle">A Peaceful Place 🍃 Chill Morning Lofi 🍃</h4>
+                        <div class="Title_span Rt"><span>Lofi Everyday</span><img height="15" width="15"
+                                src="./Image/Mark.svg"></div>
+                        <span class="Rt"> 856 Watching • 5 month ago</span>
+
+                    </div>
+                </div>
+            </div>
+            <div class="RContainer_Info">
+                <iframe class="frame" src="https://www.youtube.com/embed/If_UO5D9SdU?si=4hPiMbcZJOCQ7VmX"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="RContainer_Description R_Btm_Desp">
+                    <div class="Right_Img">
+                        <img id="img" style="background-color: transparent;" height="30" width="30" draggable="false"
+                            class="style-scope yt-img-shadow" alt="" width="48"
+                            src="https://yt3.ggpht.com/AbrJtggLGqN7VvqS5Ucdr8dfMgr67Ov2L8NRR_mRf57wksOlnBdiOZCno_ZXUbuev-iaT_dZIWw=s68-c-k-c0x00ffffff-no-rj">
+
+                    </div>
+
+                    <div class="Right_breif">
+                        <h4 class="Rtitle">A Peaceful Place 🍃 Chill Morning Lofi 🍃</h4>
+                        <div class="Title_span Rt"><span>Lofi Everyday</span><img height="15" width="15"
+                                src="./Image/Mark.svg"></div>
+                        <span class="Rt"> 856 Watching • 5 month ago</span>
+
+                    </div>
+                </div>
+            </div>
+            <div class="RContainer_Info">
+                <iframe class="frame" src="https://www.youtube.com/embed/If_UO5D9SdU?si=4hPiMbcZJOCQ7VmX"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="RContainer_Description R_Btm_Desp">
+                    <div class="Right_Img">
+                        <img id="img" style="background-color: transparent;" height="30" width="30" draggable="false"
+                            class="style-scope yt-img-shadow" alt="" width="48"
+                            src="https://yt3.ggpht.com/AbrJtggLGqN7VvqS5Ucdr8dfMgr67Ov2L8NRR_mRf57wksOlnBdiOZCno_ZXUbuev-iaT_dZIWw=s68-c-k-c0x00ffffff-no-rj">
+
+                    </div>
+
+                    <div class="Right_breif">
+                        <h4 class="Rtitle">A Peaceful Place 🍃 Chill Morning Lofi 🍃</h4>
+                        <div class="Title_span Rt"><span>Lofi Everyday</span><img height="15" width="15"
+                                src="./Image/Mark.svg"></div>
+                        <span class="Rt"> 856 Watching • 5 month ago</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="RContainer_Info">
+                <iframe class="frame" src="https://www.youtube.com/embed/If_UO5D9SdU?si=4hPiMbcZJOCQ7VmX"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="RContainer_Description R_Btm_Desp">
+                    <div class="Right_Img">
+                        <img id="img" style="background-color: transparent;" height="30" width="30" draggable="false"
+                            class="style-scope yt-img-shadow" alt="" width="48"
+                            src="https://yt3.ggpht.com/AbrJtggLGqN7VvqS5Ucdr8dfMgr67Ov2L8NRR_mRf57wksOlnBdiOZCno_ZXUbuev-iaT_dZIWw=s68-c-k-c0x00ffffff-no-rj">
+
+                    </div>
+
+                    <div class="Right_breif">
+                        <h4 class="Rtitle">A Peaceful Place 🍃 Chill Morning Lofi 🍃</h4>
+                        <div class="Title_span Rt"><span>Lofi Everyday</span><img height="15" width="15"
+                                src="./Image/Mark.svg"></div>
+                        <span class="Rt"> 856 Watching • 5 month ago</span>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="RContainer_Info">
+                <iframe class="frame" src="https://www.youtube.com/embed/If_UO5D9SdU?si=4hPiMbcZJOCQ7VmX"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="RContainer_Description R_Btm_Desp">
+                    <div class="Right_Img">
+                        <img id="img" style="background-color: transparent;" height="30" width="30" draggable="false"
+                            class="style-scope yt-img-shadow" alt="" width="48"
+                            src="https://yt3.ggpht.com/AbrJtggLGqN7VvqS5Ucdr8dfMgr67Ov2L8NRR_mRf57wksOlnBdiOZCno_ZXUbuev-iaT_dZIWw=s68-c-k-c0x00ffffff-no-rj">
+
+                    </div>
+
+                    <div class="Right_breif">
+                        <h4 class="Rtitle">A Peaceful Place 🍃 Chill Morning Lofi 🍃</h4>
+                        <div class="Title_span Rt"><span>Lofi Everyday</span><img height="15" width="15"
+                                src="./Image/Mark.svg"></div>
+                        <span class="Rt"> 856 Watching • 5 month ago</span>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="RContainer_Info">
+                <iframe class="frame" src="https://www.youtube.com/embed/If_UO5D9SdU?si=4hPiMbcZJOCQ7VmX"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="RContainer_Description R_Btm_Desp">
+                    <div class="Right_Img">
+                        <img id="img" style="background-color: transparent;" height="30" width="30" draggable="false"
+                            class="style-scope yt-img-shadow" alt="" width="48"
+                            src="https://yt3.ggpht.com/AbrJtggLGqN7VvqS5Ucdr8dfMgr67Ov2L8NRR_mRf57wksOlnBdiOZCno_ZXUbuev-iaT_dZIWw=s68-c-k-c0x00ffffff-no-rj">
+
+                    </div>
+                    <div class="Right_breif">
+                        <h4 class="Rtitle">A Peaceful Place 🍃 Chill Morning Lofi 🍃</h4>
+                        <div class="Title_span Rt"><span>Lofi Everyday</span><img height="15" width="15"
+                                src="./Image/Mark.svg"></div>
+                        <span class="Rt"> 856 Watching • 5 month ago</span>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- Right container1  close -->
+    </div>
+</body>
+
+</html>
+
+<!-- <img alt="" class="yt-core-image yt-spec-avatar-shape__image yt-core-image--fill-parent-height yt-core-image--fill-parent-width yt-core-image--content-mode-scale-to-fill yt-core-image--loaded" src="https://yt3.ggpht.com/JHCZDz37bsTmwoE1o4LEodF5vhsHfk29kCEauDTFr27-7hHXsHHvvWGzcG77v32ERrkpfInkGQ=s68-c-k-c0x00ffffff-no-rj"> -->
+<!-- <img alt="" class="yt-core-image yt-spec-avatar-shape__image yt-core-image--fill-parent-height yt-core-image--fill-parent-width yt-core-image--content-mode-scale-to-fill yt-core-image--loaded" src="https://yt3.ggpht.com/NPmv9oIkqMuburUlS7bgnWgPtKo3U-cHFmtJqp-ADf1rTA2bjt3gey0bFhLR74C57OgfCxJQvG8=s68-c-k-c0x00ffffff-no-rj"> -->
+<!-- <img style="display: block;-webkit-user-select: none;margin: auto;cursor: zoom-in;/* background-color: hsl(0, 0%, 90%); */transition: background-color 300ms;" src="https://res.cloudinary.com/dz209s6jk/image/upload/v1721234373/Challenges/jquszyijb2sxtpl3krck.jpg" width="50px" height="50px"> -->

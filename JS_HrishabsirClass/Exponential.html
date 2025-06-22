@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo-arr"></p>
+    <p id="demo-flatmaparr"></p>
+    <p id="demo-arrPM"></p>
+    <script>
+      // 5 power 5 using **
+      let a = 5;
+      let result = a ** 5;
+      document.getElementById("demo").innerHTML = result;
+
+      // Other Method using "pow"
+      let a1 = 5;
+      let res = Math.pow(a1, 5);
+      document.getElementById("demo1").innerHTML = res;
+
+      // padEnd/ padstart
+      let a2 = "5";
+      a = a2.padStart(4, "R");
+      // a = a2.padEnd(4, "R");
+      document.getElementById("demo2").innerHTML = a;
+
+      //Print multiply by 10 times
+      let arr = [1, 4, 7, 9];
+
+      for (i = 0; i < arr.length; i++) {
+        document.getElementById("demo-arr").innerHTML += arr[i] * 10 + "<br>";
+      }
+      // Other Method---Print multiply by 10 times
+
+      let arr1 = [1, 2, 3, 4];
+      let rslt = arr1.flatMap((el) => [el * 10]);
+      document.getElementById("demo-flatmaparr").innerHTML = rslt;
+      // ---------------------------------------
+      let arr2 = [1, 2, 3, 4];
+      let rst = arr2.flatMap((el) => [el, el * 10 + "<br>"]);
+      let rst1 = rst.join("");
+      document.getElementById("demo-flatmaparr").innerHTML = rst1;
+
+      let arr3 = [1, 2, 3, 4];  // o/p=> +1,-1,+1,-1 
+      for (i = 0; i < arr3.length; i++) {
+        if (i % 2 == 0) {
+          document.getElementById("demo-arrPM").innerHTML += arr3[i]+1 +"<br>"; 
+        } else {
+          document.getElementById("demo-arrPM").innerHTML += arr3[i]-1 +"<br>";
+        }
+      }
+    </script>
+  </body>
+</html>
