@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //SETS ---A collection of unique values & remove duplicate values but not allows Upper case and lowercase
+        const order_set = new Set([
+            "Pasta",
+            "Pizza",
+            "Pizza",
+
+            "garlic bread", "Pasta",
+            "Pizza"
+        ]);
+        console.log(order_set);  //{'Pasta', 'Pizza', 'garlic bread'} Use curly braces
+
+
+        //New set in console using string
+        console.log(new Set("Payal"));  // {'P', 'a', 'y', 'l'}
+
+        //In array= length
+        console.log(order_set.size);  // 4
+
+        //Inculde
+        console.log(order_set.has("choc")); //Has return boolean- false
+
+        //Push
+        console.log(order_set.add("Item new")); // add value {'Pasta', 'Pizza', 'garlic bread','Item new'}
+        // OR
+        order_set.add("Item new")
+        console.log(order_set);
+
+        console.log(order_set.delete("garlic bread"));
+        console.log(order_set);
+
+        console.log(order_set[0]);
+
+        //How to iterate- using FOr(of) loop
+
+        for (let i of order_set) {
+            console.log(i);
+
+        }
+        // o/p-  //Pasta 
+        // Pizza 
+        // Item new
+
+        // Deduplicating an array:
+        // example- All profiles in Array using Set
+
+        const staff = ["waiter", "chef", "waiter", "manager", "chef", "waiter"];
+        const Unique_Staff = new Set(staff);
+        // Unique profile
+        console.log(Unique_Staff);  // {'waiter', 'chef', 'manager'}
+
+
+        // spread in Array 
+        const staff2 = ["waiter", "chef", "waiter", "manager", "chef", "waiter"];
+        //  const Unique_Staff2 = [new Set(...staff2)];  //{'w','a','i','t','e','r'}
+        const Unique_Staff2 = [...new Set(staff2)]; // ['waiter', 'chef', 'manager']
+        console.log(Unique_Staff2);
+
+
+        // ----------------Maps- work as a object to store key-value pair, but key could be any type -Boolean,Array,string etc--------------------------------
+        const rest_map = new Map();
+
+        //1. add elements
+        rest_map.set("name", "KFC");  // key as a string 
+        console.log(rest_map);        // Map(1) {'name' => 'KFC'}
+
+        //2.
+        rest_map.set(1, "New Delhi"); // key as a number
+        console.log(rest_map);// {'name' => 'KFC', 1 => 'New Delhi'}
+
+        //3. set key
+        console.log(rest_map.set(2, "noida"));
+
+        //Method chaning
+        rest_map
+            .set("categories", ["Indian", "italian"])
+            .set("open", 11)
+            .set("close", 23)
+            .set(true, "we are open")
+            .set(false, [false, "we are closed"])
+        console.log(rest_map);
+
+        let time = 8;
+        //  let time1= new Date().getHours();   for dynamic
+        // console.log(time1);
+        console.log(rest_map.get(time > rest_map.get("open") && time < rest_map.get("close")));
+        //    console.log(rest_map.get(true && false)); // return false
+        //    console.log(rest_map.get(false));
+        console.log(rest_map);
+
+        rest_map.delete(2);
+        rest_map.clear();
+
+
+
+    </script>
+</body>
+
+</html>

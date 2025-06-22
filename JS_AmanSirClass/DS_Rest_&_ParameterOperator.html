@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heading-3</title>
+</head>
+
+<body>
+
+    <script>
+        "use strict";
+
+        const restaurant_obj = {
+            name: "subway",
+            location: "Sector 16,Noida,India",
+            categories: ["Indian", "Italian", "veg", "Non-veg"],
+            startermenu: ["garlic", "salad", "sandw", "multi bread"],
+            mainmenu: ["Pizza", "pasta", "thali"],
+
+            openinghours: {
+                thu: {
+                    open: 12,
+                    close: 22,
+                },
+                fri: {
+                    open: 11,
+                    close: 23,
+                },
+                sat: {
+                    open: 0,
+                    close: 24,
+                },
+            },
+        }
+        // ===========================================(Rest Pattern- Left) And Parameter======================================
+
+        // Destructuring means breaking an array into individual variables easily.
+        const arr1 = [10, 20, 30];
+        const [aa, bb, cc] = arr1;
+
+        console.log(aa); // 10
+        console.log(bb); // 20
+        console.log(cc); // 30
+
+
+        // Feature	 Where Used	   What It Does	                        Example
+        // Spread	 Right side	   Unpacks items (explodes)	            func(...arr) → func(1,2,3)
+        // Rest   	Leftside	   Collects extra items (gathers)   	const [...rest] = arr
+
+
+        // -----------------Spread- Right
+        const nums = [1, 2, 3];
+        const newNums = [...nums, 4, 5];
+
+        console.log(newNums); // [1, 2, 3, 4, 5]
+
+
+        // -----------------Rest- Left  // as a destructuring array variables
+        const arr2 = [1, 2, 3, 4];
+        const [first, ...others] = arr2;
+        console.log(first);  // 1
+        console.log(others); // [2, 3, 4]
+
+
+        // ---------------------------------------------Array Rest-Left opert---------------------------------------------
+
+        const array = [3, 4];
+        console.log(...array);
+
+        const array1 = [1, 2, ...[3, 4]];    //spread- right
+        console.log(array1);
+
+        const [a, b, ...NewAr] = [1, 2, 3, 4, 5];   //rest of the aray- Left
+        console.log(1, 2, NewAr);
+
+        const [pizza, pasta, ...otherrest] = [...restaurant_obj.mainmenu, ...restaurant_obj.startermenu]
+        console.log(pizza, pasta, otherrest);
+
+        // -----------------------------------------object Rest-Left operator------------------------------------------------
+
+        const { sat, ...rest_weeks } = restaurant_obj.openinghours;
+        console.log(sat, rest_weeks);
+
+
+        // --------------------------- dynamic function Using "Rest Parameter"--------------------------------------------
+
+        const add = function (num1, num2) {
+            let sum = num1 + num2;
+            console.log(sum);
+        }
+        add(10, 20);
+        add(20, 30, 40);
+
+        // For Dynamic values in array.............................
+        const add1 = function (numbers) {
+            let sum = 0;
+            for (let i = 0; i < numbers.length; i++) {
+                sum += numbers[i];
+            }
+            console.log(sum);
+
+        };
+        add1([10, 20]);
+        add1([20, 30, 40, 50]);
+        add1([20, 30, 40, 533, 60]);
+
+
+        // For Dynamic values Without passing array Using "Rest parameter"-.............................
+        const add2 = function (...numbers) {
+            let sum = 0;
+            for (let i = 0; i < numbers.length; i++) {
+                sum += numbers[i];
+            }
+            console.log(sum);
+
+        };
+        add2(10, 20);
+        add2(20, 30, 40, 50);
+        add2(20, 30, 40, 533, 60);
+
+        // For Dynamic values Without passing array Using "Rest parameter"- Always go in last.............................
+        const add3 = function (a, b, ...numbers) {
+
+            let sum = 0;
+            for (let i = 0; i < numbers.length; i++) {
+                sum += numbers[i];
+            }
+            console.log(sum);
+
+        };
+        add3(10, 20);  // o/p - 0
+        add3(20, 30, 40, 50);
+        add3(20, 30, 40, 533, 60);
+
+
+        // For Dynamic values Without passing array Using "Rest parameter"- Always go in last...............
+
+        const add4 = function (...numbers) {               // Use in Parameter works as "Rest Parameter"
+
+            let sum = 0;
+            for (let i = 0; i < numbers.length; i++) {
+                sum += numbers[i];
+            }
+            console.log(sum);
+
+        };
+        add4(10, 20);  //o/p -> 0
+        add4(20, 30, 40, 50);
+        add4([20, 30, 40, 533, 60]); //o/p -> 020,30,40,533,60    // goes in single element in form of array   
+        add4(...[20, 30, 40, 533, 60]); //o/p -> 683   //when we call funtion and use ... dots works as a spread operator for comma seperated
+
+    </script>
+</body>
+
+</html>

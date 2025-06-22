@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        "use strict";
+
+        // -------------------28/April--------------------------------
+
+
+        // *****Expression--- which return values
+        // 1) 3+4
+        true && false && !False;
+
+        // ******Statement--- doesn't return values.
+        if (23 > 10) {
+            const str = "32 is greater";
+        }
+
+        // --Statement and "Rahul is value as Expression"
+        const me = "Rahul";
+
+        // ${inside we can only use "Expresssions"} and 
+        // CAN NOT use statements inside ${} 
+        console.log(`I'm ${2025 - 1998} years old ${me}`);
+
+
+        // if we want "if else" condition funtionality then use
+        // *************USE TERNERY OPERATOR:***************
+        const ag = 19;
+        // console.log(`you ${if (age>18)} can drive a car`);  you "CAN NOT USE "if statement" inside ${Expr only- return values} 
+        console.log(`you ${ag > 18 ? "can" : "cannot"} drive a car`);
+        // OR
+        const age3 = 12;
+        const age4 = age3 > 18 ? "Car" : "Bycle"
+        console.log(`You can drive a ${age4}`);
+
+        // Instead of IF Else--
+        // if(age>18)
+        // {
+        //   console.log("Can drive a car");
+        // }
+        // else
+        // {
+        //   console.log("Can drive a bicycle");
+        // }
+
+
+        // -----------------------------29/April----------
+
+        console.log("Javascript Part 2");
+        // Use "cl" for console.log
+        console.log('');
+        // remove single quotes from shelly.code-snippes
+        console.log();
+
+
+        // Activating Srtict Mode : " Use Strict"--(For Retriev Errors)
+
+        let hasDriverLicence = false;
+        //   const passTest =false;
+        const passTest = true;
+        //  alwaays see true cond.
+        if (passTest)
+            hasDriverLicence = true;
+        if (hasDriverLicence)
+            console.log("I can drive");
+
+        // const interface="car";
+        // const private = false;
+
+
+        //****************** Funtions: takes input and generate output****************
+
+        //1. FUNCTIONS: for same output
+        function calling() {
+            console.log("Rahul calling");
+        }
+        //  Calling/running/invoking a funtion
+        calling();
+        calling();
+        calling();
+
+        //2. Upgrade FUNCTIONS : calling through parameter(or more than one para.)
+        //  for different outputs but this only PRINT value not retuning anything 
+
+        function call(name, age) {
+            console.log(`My name is ${name} and age is  ${age}`);
+        }
+        //  Calling/running/invoking a funtion
+        call("Rahul", 10);
+        call("shriya", 20);
+        call("Shobhit", 30);
+
+        //3. Funtion: but not Returning value
+
+        function fruitproc(apple, orange) {
+
+            //  both gives same output "but no return value" whether you store through const value or print
+            console.log(`${apple} and ${orange}`);
+            const juice = (`${apple} and ${orange}`);
+            console.log(juice);
+        }
+        fruitproc(5, 0);
+
+
+        //4. Funtion: how to Return value
+
+        function fruitprocessor(apple, orange) {
+            //  store in string
+            const juice = (`Juice with ${apple} apples and ${orange} orange`);
+            //  For "return value" and funtion always does return value
+            return juice;
+            //   console.log(juice) ; For only print value
+        }
+        //   console.log(fruitprocessor(5, 0)); only shows print value
+
+        // now, funtion has return value or output, so we can store into a variable and can reuse value and print
+        const fruitjuice = fruitprocessor(5, 0);
+        const fruitorange = fruitprocessor(0, 5);
+        console.log(fruitjuice);
+        console.log(fruitorange);
+
+
+        //******************************** Function calling other funtion*************
+
+        function mixfruit(apples) {
+            return apples * 2;
+        }
+
+        function fruits(apples, orange) {
+            const fruitjuice_apple = mixfruit(apples);
+            const fruitjuice_orange = mixfruit(orange);
+            const mixfruit_juice = `${fruitjuice_apple} and ${fruitjuice_orange}`;
+            return mixfruit_juice;
+        }
+
+        const fruitapp_result = fruits(8, 0);
+        const fruitorg_result = fruits(0, 8);
+        console.log(fruitapp_result);
+        console.log(fruitorg_result);
+
+        // 8. funtion Calling other function:
+
+        function cutfruitpieces(fruit) {
+            return fruit * 4;
+        }
+
+        function fruitprocNew(apples, oranges) {
+            const applepieces = cutfruitpieces(apples);
+            const orangepieces = cutfruitpieces(oranges);
+
+            const juice = `juice with ${applepieces} of apples and ${orangepieces} pieces of orange`;
+        }
+        const applejuice = fruitprocNew(5, 0);
+        const orangejuice = fruitprocNew(0, 5)
+
+        console.log(applejuice);
+        console.log(orangejuice);
+        // ********************************************************************************************
+
+
+
+        // 5. *******Declaration Funtion********* has a (hoisting: means can call anywhere) SAME PREVIOUS one
+
+        // initialization can be accessed anywhare 
+        const age1 = calage(2002);
+        function calage(birthyear) {
+            // const age= 2025-birthyear;  OR
+            // return age;
+            return 2025 - birthyear;
+        }
+        console.log(age1);
+
+
+        // 6 **********Funtion Expression- Remove- funtion_name only******* (LAtest one)
+
+        // const age2 = calage1(2008); // can not access before initialization
+        const calage1 = function (birthyear) {
+            // const age= 2025-birthyear;  OR
+            // return age;
+            return 2025 - birthyear;
+        }
+        //  can not access anywhere before initialization 
+        const age2 = calage1(2010);
+        console.log(age2);
+
+
+        // 7. *********Arrow function(one linear function)--Remove func_keyword func_name ********
+
+        const calculate = (a, b) => {
+            return a + b;
+        }
+        // let a = 2, b = 4;
+        const calculate1 = calculate(7, 9);
+        const calculate2 = calculate(10, 9);
+        console.log(calculate1);
+        console.log(calculate2);
+
+        // other Examp
+        const calage2 = (birthyear) => 2025 - birthyear;
+        const age5 = calage2(2014);
+        console.log(age5);
+
+
+
+        // ----------------------01/May------------------
+
+        // ******ARRAY- Create, Update, how Access to Array****** ---- create multiple names
+
+        const friend1 = "rahul";
+        const friend2 = "Vishal";
+        const friend3 = "Harsh";
+
+        const friends = ["rahul", "Vishal", "Harsh"];  // Create Array
+        console.log(friends);
+
+        console.log(friends[0]);   //how Access to Array
+        console.log(friends[2]);
+        console.log(friends.length);
+        console.log(friends[friends.length - 1]);
+
+        friends[2] = "Shivani";      // array are mutable Or Update
+        console.log(friends[2]);
+        console.log(friends);
+
+        //    other  Array  method
+        const year = new Array(1991, 1992, 1993, 1994); // create Array object
+        console.log(year);
+
+        // ******************************************************
+        const calcage = (birthyear) => 2025 - birthyear;
+        const years = [1991, 1992, 1993, 1994];
+        calcage(years[0]);
+        // ******************************************************
+
+
+        // create Array with the help of string
+        const Firstname = "Shelly";
+        const Name = [Firstname, "agarwal", 2000 - 1999, "web developer", friends];
+        console.log(Name);
+
+
+        // Basic Array
+        const friends1 = ["Rahul", "Vishal", "Harsh"];
+        console.log(friends1);
+        //  Add Elements --PUSH from the end 
+        const newlength = friends1.push("Shivani");
+        console.log(newlength);
+        const newlength1 = friends1.unshift("Shiv");
+        console.log(newlength1);
+
+
+        // -----------------------------5/May----------
+
+
+        // // Add Element
+
+        // const newlength = friends1.push("Nitin");
+        // console.log(friends1);
+        // console.log(newlength);
+
+        // friends1.unshift("Ravi");
+        // console.log(friends1);
+
+        // // Remove Elements
+        // const popped = friends1.pop();
+        // friends1.shift()
+
+        // // Intro to objects
+
+        // const rahulArray = ["Rahul", "Sharma", 2025 - 1996, "Teacher"];
+
+
+        
+        // -----------------------------5/May----------
+
+        //  objects
+
+        const rahul = {
+            Firstname: "Rahul",
+            birthyear: 1996,
+            job: "teacher",
+            hasDriverLicense: true,
+
+            calcAge1: function (birthyear) {
+                return 2025 - birthyear;
+            },
+            calcAge2: function () {
+                return 2025 - rahul.birthyear; //Improved method
+            },
+            calcAge3: function () {
+                return 2025 - this.birthyear;  // dont need to update object refrence using this keyword
+            },
+            calcAge3: function () {
+                return 2025 - this.birthyear;  // dont need to update object refrence using this keyword
+            },
+            calcAge4: function () {
+                return 2025 - this.birthyear;  // dont need to update object refrence
+                this.age = age;   // create "age= memory" variable inside the "object method" 
+                //and there is no age varible created before.. hover mouse over age
+                return age;
+            }
+        };
+        // console.log(rahul.calcAge1(1996));
+        // console.log(rahul.calcAge2()); // impproves method
+        // console.log(rahul.calcAge3());   // dont need to update object refrence
+        // console.log(rahul.calcAge4()); // calculate age 
+        console.log(rahul); //now we can access "age" property
+        console.log(rahul.calcAge4());
+        // console.log(rahul.age)
+
+
+
+
+        // --------------------------------6/May-----------------------
+
+        //  Loop- repeatedly executes a block of code as long as a specified condition is true
+
+        // incr loop -- initialze; condition ; increment
+        for (let i = 1; i <= 10; i++) {
+            console.log("hi" + i);
+        }
+
+        // decrement loop
+        for (let i = 10; i >= 1; i--) {
+            console.log(i);
+        }
+
+        // Tables loop
+        let table = 7;
+        for (let i = 1; i <= 10; i++) {
+            console.log(`${table}* ${i} =${table * i}`);
+        }
+
+        // Array with loop
+        const rahulArr = [
+            "Rahul",
+            "Sharma",
+            2025 - 1996,
+            "teacher",
+            ["Ravi", "Naman", "Nitin"],
+            true
+        ];
+        // incr loop of array
+        for (let i = 0; i <= rahulArr.length - 1; i++) {
+            console.log(rahulArr[i]);
+        }
+        //  dec loop of array
+        for (let i = rahulArr.length - 1; i >= 0; i--) {
+            console.log(rahulArr[i]);
+        }
+
+        // -------------------------13/April--------------
+
+        // Nested loop-  The inner loop executes completely for each iteration of the outer loop.
+        //  This structure is commonly used to work with multi-dimensional arrays or to perform repetitive tasks that depend on multiple variables. 
+
+        // Nested Loop
+        for (let i = 0; i < 10; i++) {
+            for (let j = 0; j < 10; j++) {
+                console.log(i + '' + j)
+            }
+        }
+
+        // Print Even numbers 1 to 20
+        for (let i = 1; i <= 20; i++) {
+            if (i % 2 == 0)
+                console.log(i);
+        }
+        // OR
+
+        for (let i = 2; i <= 20; i = i + 2) {
+            if (i % 2 == 0) {
+                console.log(i);
+            }
+        }
+
+        // Factorial of a number 5
+
+        let f = 1; // inialize
+        for (let i = 1; i <= 5; i++) {
+            f = i * f; // f= (update value)
+            console.log(f);
+        }
+
+        //Largest and second largest element in array-
+
+        const num = [45, 12, 6, 24, 52, 13, 25, 66, 18, 7];
+        let Largest = num[0]; // 45
+        let second_Largest = num[0];
+        for (let i = 0; i < num.length; i++) {
+            if (num[i] > Largest) {
+                Largest = num[i];
+            }
+        }
+        for (let i = 0; i < num.length; i++) {
+            if (num[i] > second_Largest && num[i] != Largest)
+                second_Largest = num[i];
+        }
+        console.log(Largest);
+        console.log(second_Largest);
+
+        // ======================================14/April=========================================
+
+        let dice = Math.trunc(Math.random() * 6 + 1);
+
+        // Math.random => 0.00000 - 0.99999
+        // Math.random() *6 => 0.0000006 - 5.9999994
+        // Math.random() * 6+ 1 => 1.000006 -6.99999994
+        // Math.trunc(Math.random() * 6 +1)=> 1-6
+
+        while (dice != 6) {
+            console.log(`you rolled a ${dice}`);
+
+            dice = Math.trunc(Math.random() * 6 + 1);
+            if (dice == 6) {
+                console.log("Loop is about to end..");
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

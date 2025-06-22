@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heading-1</title>
+</head>
+
+<body>
+
+    <script>
+        "use strict";
+
+        // -----------------------------------------------destructuring Array----------------------------------------------------
+        const restaurant = {
+            name: "subway",
+            location: "Sector 16,Noida,India",
+            categories: ["Indian", "Italian", "veg", "Non-veg"],
+            startermenu: ["garlic", "salad", "sandw", "multi bread"],
+            mainmenu: ["Pizza", "pasta", "thali"],
+
+
+            //created order method which user can call to place an order it takes two argument.
+            // 1) startIndex and 2) mainIndex
+
+            order: function (startIndex, mainIndex) {
+                // return an array which contain the user order
+                return [this.startermenu[startIndex], this.mainmenu[mainIndex]];
+            },
+        };
+
+
+        // ----------------------------------------------------------------------------------------------
+        //--------------------------------Array Values in Variables----------------------------------------
+
+        // Code	What You Get	Memory Phrase
+        // const x = arr[0];	Whole box	"Give me the full list/row"
+        // const [x] = arr[0];	Just first item inside	"Open box, grab first thing only"
+
+        //  const gifts = ["a", "b"]	Keep full box in one variable	gifts[0] → "a"  //full box with index
+        // const [a, b] = ["a", "b"]	Unpack each gift into variables	a = "a", b = "b" // dont need index anymore use varibles
+
+        // How to call a "order" method  passing arrayIndex 
+        const userorder = restaurant.order(2, 1);
+
+        console.log(userorder);  // In array structure
+        console.log(userorder[0], userorder[1]); // usually we seperate values can access but in destructuring we create multiple variables in a single line.
+
+        // ------------------------------------------------------------------------------------------------------------
+
+        // OR destructing array -- its a convienient way to extract values from an array and assign them to a variables in a single line.
+
+        const [x1, y1] = restaurant.order(2, 1); // x1, y1 = put into variables to get seperate values.
+        console.log(x1, y1);
+
+        // --------------------------------------------
+
+        // destructing Array
+
+        const arr = [1, 2, 3];
+        const a = arr[0];
+        console.log(a);
+        const b = arr[1];
+        const c = arr[2];  // it will take more time as compare to other syntax
+
+        // ----------------Use this method for array--------------
+
+        const [x, y, z] = arr; // proper way to extract array values
+        console.log(x, y, z);
+        console.log(arr);
+
+        const main = restaurant.categories[0];  // again lengthy method not for use
+        console.log(main);
+        const second = restaurant.categories[1];
+        console.log(second);
+
+
+
+        // // -------------------------------------------------
+
+        // creating multiple variable   // store Array 
+        const [main1, second1] = restaurant.categories; // bcz of array we are using square bracket[main, secd].
+        console.log(main1, second1);
+
+        // skip 2nd value
+        const [main2, , second2] = restaurant.categories;
+        console.log(main2, second2);
+
+        // --------------------------------------------------
+        //  examp
+        const arr1 = [100, 200, 300]  // arr1 is a variable of array
+        const [a1, a2, a3] = [100, 200, 300];  // destructuring array
+        console.log(a1, a2, a3);
+
+
+        // Nested destructring
+
+        const nested = [2, 4, [5, 6]]
+        console.log(nested[1]);
+        console.log(nested[2][0]);
+
+        const [i, j, [k, l]] = nested;
+        console.log(i, j, k);
+        //same representation of array in single variables.
+        console.log(i, j, [k]);
+        console.log(i, j, [k, l]);
+
+        // default values
+
+        const [p = 1, q = 1, r = 1] = [8, 9];  // variable without value called "undefined"
+        console.log(p, q, r);
+
+        // ----------------------------------------------------------------------------------------------------------------
+        // -------------------------------******** destructuring objects************---------------------------------------
+
+        const restaurant_obj = {
+            name: "subway",
+            location: "Sector 16,Noida,India",
+            categories: ["Indian", "Italian", "veg", "Non-veg"],
+            startermenu: ["garlic", "salad", "sandw", "multi bread"],
+            mainmenu: ["Pizza", "pasta", "thali"],
+
+            openinghours: {
+                thu: {
+                    open: 12,
+                    close: 22,
+                },
+                fri: {
+                    open: 11,
+                    close: 23,
+                },
+                sat: {
+                    open: 0,
+                    close: 24,
+                },
+            },
+
+            orderDelivery: function ({ time, address, mainIndex, starterIndex }) {
+
+                // const { time, address, mainIndex, starterIndex } = deliverydetails; // Do not need to repeat paramenter "deliverydetails"
+
+                console.log(`Order received! ${this.startermenu[starterIndex]} and ${this.mainmenu[mainIndex]} 
+                will be delivered to ${address}  at ${time}`);
+            }
+        };
+
+        //How to call a object method using passing values in object.
+
+        restaurant_obj.orderDelivery({
+            time: "22.30",
+            address: "12th street",
+            mainIndex: 2,
+            starterIndex: 2,
+
+        });
+
+
+        // ------------------------------destructuring objects Use- key --------------------------------------------------------------
+
+        // ***Need to use - check
+
+        // const { } = restaurant_obj;
+
+        console.log(restaurant.name)   //use dot in object
+        console.log(restaurant.categories);
+
+        const { name, openinghours, categories } = restaurant_obj;
+        console.log(name, openinghours, categories);
+
+        // //same variables gives error
+        // const { name, openinghours, categories } = restaurant_obj; // store in a 
+        // console.log(name1, openinghours1, categories1);
+
+        //Rename variables in objects 
+        const { name: rest_name, openinghours: hours, categories: tags } = restaurant_obj; // store in a 
+        console.log(rest_name, hours, tags);
+
+        const { mainmenu, startermenu } = restaurant_obj;
+        console.log(mainmenu, startermenu);
+
+        // //For DEFAULT value
+        // //if key variable is not defined
+        const { mm = [], startermenu: staters } = restaurant_obj;
+        console.log(mm, staters);
+
+        //Update values which have same variable name & Mutating Values
+        let aa = 111;
+        let bb = 999;
+
+        const obj1 = { aa: 11, bb: 12, cc: 16 };
+        ({ aa, bb } = obj1);
+        console.log(aa, bb);
+
+        //NESTED Objects
+        console.log(openinghours);
+        // const {fri} = openinghours;
+        // console.log(fri);
+
+        // const { fri: { open, close } } = openinghours;
+        // console.log(open,close);
+
+        //Rename variables with default value
+        const { fri: { open: oo = 22, close: dd = 22 } } = openinghours;
+        console.log(oo, dd);
+
+
+
+    </script>
+</body>
+
+</html>

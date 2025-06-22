@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heading-2</title>
+</head>
+
+<body>
+
+    <script>
+        "use strict";
+
+        const restaurant = {
+            name: "subway",
+            location: "Sector 16,Noida,India",
+            categories: ["Indian", "Italian", "veg", "Non-veg"],
+            startermenu: ["garlic", "salad", "sandw", "multi bread"],
+            mainmenu: ["Pizza", "pasta", "thali"],
+
+
+            //created order method which user can call to place an order it takes two argument.
+            // 1) startIndex and 2) mainIndex
+
+            order: function (startIndex, mainIndex) {
+                // return an array which contain the user order
+                return [this.startermenu[startIndex], this.mainmenu[mainIndex]];
+            },
+        };
+
+        // How to call a "order" method  passing arrayIndex 
+        const userorder = restaurant.order(2, 1);
+
+        console.log(userorder);  // In array structure
+        console.log(userorder[0], userorder[1]); // usually we seperate values can access but in destructuring we create multiple variables in a single line.
+
+
+        // ----------------------------------------------------------------------------------------------------------------
+        // -------------------------------******** destructuribg objects Using Spread- Right************---------------------------------------
+
+        const restaurant_obj = {
+            name: "subway",
+            location: "Sector 16,Noida,India",
+            categories: ["Indian", "Italian", "veg", "Non-veg"],
+            startermenu: ["garlic", "salad", "sandw", "multi bread"],
+            mainmenu: ["Pizza", "pasta", "thali"],
+
+            openinghours: {
+                thu: {
+                    open: 12,
+                    close: 22,
+                },
+                fri: {
+                    open: 11,
+                    close: 23,
+                },
+                sat: {
+                    open: 0,
+                    close: 24,
+                },
+            },
+
+            // orderDelivery: function ({ time, address, mainIndex, starterIndex }) {
+
+            //     // const { time, address, mainIndex, starterIndex } = deliverydetails; // Do not need to repeat paramenter "deliverydetails"
+
+            //     console.log(`Order received! ${this.startermenu[starterIndex]} and ${this.mainmenu[mainIndex]} 
+            //     will be delivered to ${address}  at ${time}`);
+            // },
+
+            //Real world exam
+            OrderPasta: function ({ ing1, ing2, ing3 }) {
+
+                console.log(`Here is your delicious Pasta ${ing1}, ${ing2},${ing3}`);
+            },
+        };
+
+    
+        // restaurant_obj.OrderPasta({ ing1: "onion", ing2: "tomato", ing3: "olives" });
+
+        //Promt method
+        // const ingredient = [prompt("lets make pasta"), prompt("lets make pasta"), prompt("lets make pasta")]
+        restaurant_obj.OrderPasta(ingredient[0], ingredient[1], ingredient[2]); // not a spread long method
+        restaurant_obj.OrderPasta(...ingredient);   //spread operator
+       
+
+
+         //How to call a object method using passing values in object.
+        // restaurant_obj.orderDelivery({
+        //     time: "22.30",
+        //     address: "12th street",
+        //     mainIndex: 2,
+        //     starterIndex: 2,
+
+        // });
+        // ------------------------------------// Spread Operator - seprated values comma separted----------------------------------------------------------
+
+        // Spread inside [] → builds a new box (array)
+        // 📣 Spread inside () → speaks out values separately
+
+
+        const arr = [7, 8, 9];
+        const badNewArr = [1, 2, arr[0], arr[1], arr[2]]  // spread arr values
+        console.log(badNewArr);
+
+        const NewArr = [1, 2, ...arr]
+        console.log(NewArr);
+
+        // both gives same results - spread value in comma seperated
+        console.log(...arr);
+        console.log(7, 8, 9);
+        console.log([...arr]);  // gives array 
+
+        const NewMenu = [...restaurant_obj.mainmenu, "panner"];
+        console.log(NewMenu);
+
+        //Copy Array using spread
+        const Copy_SpreadArray = [...restaurant_obj.mainmenu]
+        console.log(Copy_SpreadArray);
+
+        // join "two array" using spread
+        const Join_SpreadArray = [...restaurant_obj.mainmenu, ...restaurant_obj.startermenu];
+        console.log(Join_SpreadArray);
+
+        //  Iterables - Array, String, Maps, Sets, Not objects 
+        const str = "Rahul"
+        console.log(...str);
+        console.log([...str, '', ".S"]);
+
+
+        // -----------------------------------------object using Spread- Right----------------------------------------------------------
+
+        const New_restaurant = { ...restaurant_obj };
+        console.log(New_restaurant);  //  in object form { }
+        const Newrestaurant = { ...restaurant_obj, founded: 1998 };  //added in new key in old object spread
+        console.log(Newrestaurant);
+
+
+        // ===========================================Rest Pattern and Parameter======================================
+
+        // // Destructuring means breaking an array into individual variables easily.
+        // const arr1 = [10, 20, 30];
+        // const [aa, bb, cc] = arr1;
+
+        // console.log(a); // 10
+        // console.log(b); // 20
+        // console.log(c); // 30
+
+
+        // // Feature	 Where Used	   What It Does	                        Example
+        // // Spread	 Right side	   Unpacks items (explodes)	            func(...arr) → func(1,2,3)
+        // // Rest   	Leftside	   Collects extra items (gathers)   	const [...rest] = arr
+
+        // // -----------------Rest- Left
+        // const arr2 = [1, 2, 3, 4];
+        // const [first, ...others] = arr2;
+
+        // // -----------------Spread- Right
+        // const nums = [1, 2, 3];
+        // const newNums = [...nums, 4, 5];
+
+        // console.log(newNums); // [1, 2, 3, 4, 5]
+
+        // // ------------------------------------------------------------------------------------------
+        
+        // console.log(first);  // 1
+        // console.log(others); // [2, 3, 4]
+
+
+        // const array = [3, 4];
+        // console.log(...array);
+
+        // const array1 = [1, 2, ...[3, 4]];    //spread- right
+        // console.log(array1);
+
+        // const [a, b, ...NewAr] = [1, 2, 3, 4, 5];   //rest of the aray- Left
+        // console.log(1, 2, NewAr);
+
+       
+
+    </script>
+</body>
+
+</html>

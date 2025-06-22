@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heading-6</title>
+</head>
+
+<body>
+    <script>
+
+        "Use strict";
+
+        //1. Default Parameters
+
+        const bookings = [];  // array store object value 
+
+        const createBooking = function (
+            trainNum,
+            numPassengers = 1,
+            price = 200 * numPassengers
+        ){
+            const booking = {
+                // trainNum: trainNum,
+                // numPassengers: numPassengers,
+                // price: price,
+                trainNum,
+                numPassengers,
+                price,
+            };
+            bookings.push(booking);
+        };
+        createBooking("train1",);
+        createBooking("train2", 1, 200);
+        createBooking("train3", 4, 800)
+
+        console.log(bookings);
+
+
+        //2. How passing Arguments Works: Values vs References
+
+        const trainTicket = "train101";
+        const rahul = {
+            name: "Rahul Sharma",
+            adhaar: "12345",
+        }
+        //parameters Lists(input)
+        const checkIn = function (Ticket, Passengers) {
+            Ticket = "ticket101-checked";
+            Passengers.name = "Mr. " + Passengers.name;
+        };
+
+        //arguments
+        checkIn(trainTicket, rahul);
+        console.log(trainTicket, rahul);
+
+        
+        // 3. Function Accepting callback Function  //First class function method
+
+        const oneword = function (str1) {
+            return str1.replace(/ /g, "").toLowerCase();
+        };
+
+        console.log(oneword("Today is monday"));
+
+        const upperFirstWord = function (str2) {
+            const [first, ...others] = str2.split(" ");
+            return [first.toUpperCase(), ...others].join(" ");
+        };
+
+        console.log(upperFirstWord("Today is monday"));
+
+
+        //HIGHER ORDER FUNCTION    1. Function as an argument 2. Function return as a Nested Function. 
+
+        const transform = function (str, fn) { 
+            console.log(`Original String: ${str}`);
+            console.log(`Transform string: ${fn(str)}`);
+            console.log(`Transform string: ${fn.name}`);  //to check function name
+        }
+
+        transform("Javascipt is the best", oneword);
+        transform("Javascipt is the best", upperFirstWord);
+
+
+        // Function returning function
+        const greet = function (greeting) {   // greet call function()
+            return function (name) {
+                console.log(`${greeting} ${name}`)
+            };
+        };
+        const greeterHello = greet("Hello"); // greeter recieve return Nested function()
+        greeterHello("Nitin");
+        const goodmorning = greet("good Morning")
+        goodmorning("Nitin");
+        greet("hey")("vijay");
+
+        // 1. First-Class Functions
+
+        // // 1. Define a function
+        // function greet(name) {
+        //     return `Hello, ${name}!`;
+        // }
+
+        // // 2. Assign to a variable
+        // const sayHello = greet;
+        // console.log(sayHello);
+
+        // // 3. Store in an array
+        // const fns = [sayHello, Math.sqrt];
+        // console.log(fns);
+
+        // // 4. Pass as an argument
+        // function callWithBob(fn) {
+
+        //     console.log(fn('Bob'));
+        // }
+        // callWithBob(sayHello);  // → "Hello, Bob!"
+
+        // // 5. Return from another function
+        // function makeGreeter() {
+        //     return function (name) {
+        //         return `Hey there, ${name}!`;
+        //     }
+        // }
+
+        // const hi = makeGreeter();
+        // console.log(hi('Alice'));  // → "Hey there, Alice!"
+
+
+    </script>
+
+</body>
+
+</html>
